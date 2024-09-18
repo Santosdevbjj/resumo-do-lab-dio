@@ -1,7 +1,3 @@
-# resumo-do-lab-dio - Este repositório contém
-# o resumo das lições aprendidas durante o
-# desenvolvimento do lab na Dio.
-
 **O que é o Microsoft Azure?**
 
 O Microsoft Azure tem como propósito o alcance das metas e potencialidade de criar, gerenciar e implantar aplicativos de qualquer lugar, através de linguagens, estruturas e infraestruturas ou até mesmo do próprio data center e outras nuvens para aprimorar pequenos e grandes desafios.
