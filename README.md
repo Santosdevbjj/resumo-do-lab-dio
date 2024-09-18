@@ -30,7 +30,9 @@ As garantias nesse caso, estão na coleta e gestão de dados, no trabalho remoto
 
 Além disso, os colaboradores perdem menos tempo com tarefas repetitivas e manuais e podem usar essa economia para se tornarem mais produtivos estrategicamente. 
 
-Análise de dados com IA e Machine Learning
+**Análise de dados com IA e Machine Learning**
+
+![Screenshot_20240918-180957](https://github.com/user-attachments/assets/467661ab-45b1-4fee-9d24-8e0da1e8f0a1)
 
 A Microsoft também oferece recursos de Inteligência Artifical e Machine Learning como módulos na assinatura Azure. O uso dessas tecnologias permite uma análise de dados muito mais complexa do que os relatórios de desempenho tradicionais e pode apontar novos rumos para a sua empresa. 
 
