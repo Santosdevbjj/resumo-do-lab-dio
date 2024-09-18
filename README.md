@@ -1,5 +1,7 @@
 **O que é o Microsoft Azure?**
 
+![Screenshot_20240918-145559](https://github.com/user-attachments/assets/859daa07-eb44-43b4-b3ee-b8773d8bc738)
+
 O Microsoft Azure tem como propósito o alcance das metas e potencialidade de criar, gerenciar e implantar aplicativos de qualquer lugar, através de linguagens, estruturas e infraestruturas ou até mesmo do próprio data center e outras nuvens para aprimorar pequenos e grandes desafios.
 
 Sendo assim, a sua atuação se concentra em toda a plataforma de nuvem da Microsoft — desde a infraestrutura de cloud computing para hospedar sistemas empresariais até ferramentas e recursos que expandem a capacidade produtiva de negócios em todos os setores.
@@ -586,6 +588,34 @@ Use dois til ~~ para criar texto tachado.
 ~~Texto tachado~~
 
 Esses são alguns exemplos básicos de formatação de texto no GitHub usando Markdown!
+
+
+**Benefícios da Computação em Nuvem**
+
+**Alta Disponibilidade**
+A alta disponibilidade se concentra em garantir a disponibilidade máxima, independentemente de interrupções ou eventos que possam ocorrer.
+
+**Escalabilidade**
+A escalabilidade refere-se à capacidade de ajustar recursos para atender à demanda. A capacidade de escalar significa que voce poderá adicionar mais recursos para lidar melhor como aumento da demanda. 
+
+**Elasticidade**
+Com a elasticidade, se voce experimentasse um salto repentino acentuado na demanda, seus recursos implantados poderiam ser expandidos (automaticamente ou manualmente).
+
+**Confiabilidade** 
+Devido ao design descentralizado, a nuvem naturalmente dá suporte a uma infraestrutura confiável e resiliente. Com um design descentralizado, a nuvem permite que voce tenha recursos implantados em várias regiões do mundo. 
+
+**Previsibilidade**
+A previsibilidade na nuvem permite que voce avance com confiança, seja no desempenho ou no custo. Ambas são influenciadas pelo Microsoft Azure Well-Architected Framework. 
+
+**Segurança**
+A nuvem oferece ferramentas de segurança que atendem às necessidades dos clientes mas, é importante lembrar que a implementação de muitas delas devem ser realizadas pelo cliente. 
+
+**Governança**
+A auditoria baseada em nuvem ajuda a sinalizar qualquer recurso que esteja fora da conformidade com seus padrões corporativos e fornece estratégias de mitigação. Ao estabelecer uma presença de governança o mais cedo possível, voce poderá manter sua presença de nuvem atualizada, protegida e bem gerenciada. 
+
+**Gerenciabilidade** 
+Um dos principais benefícios da computação em nuvem são as opções de gerenciamento. Há dois tipos de capacidade de gerenciamento para computação em nuvem que aprenderemos. O gerenciamento da nuvem diz respeito a gerenciar seus recursos da nuvem. Por exemplo: Escalar automaticamente a implantação de recursos com base na necessidade. 
+
 
 
 
