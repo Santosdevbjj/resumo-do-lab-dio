@@ -1,3 +1,6 @@
+**<h1>Este readme contém um pequeno resumo do o que foi aprendido no laboratório do Bootcamp Microsoft Azure.<h1>**
+
+
 **O que é o Microsoft Azure?**
 
 ![Screenshot_20240918-145559](https://github.com/user-attachments/assets/859daa07-eb44-43b4-b3ee-b8773d8bc738)
@@ -81,6 +84,9 @@ Controle maior nas gestões financeira, administrativa e operacional.
 Quando você investe no plano certo do Azure para atender a sua empresa, é possível reunir todas essas vantagens em um só sistema e um único contrato. Essa tecnologia é um apoio para a operação atual e uma plataforma para novos rumos de mercado. 
 
 **O que é computação em nuvem?**
+
+![Screenshot_20240919-001803](https://github.com/user-attachments/assets/50667503-1ee3-4bb4-81c8-e0da3d9fb912)
+
 Computação em nuvem se refere ao fornecimento sob demanda de recursos de TI através da Internet. Em vez de usar softwares ou hardwares que estão no local, você usa tecnologia hospedada em um banco de dados remoto. Embora, às vezes, sejam gratuitos, os serviços de computação em nuvem são normalmente pagos mediante assinaturas. 
 
 Como funciona a computação em nuvem?
