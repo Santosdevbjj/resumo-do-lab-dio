@@ -626,6 +626,69 @@ Um dos principais benefícios da computação em nuvem são as opções de geren
 
 
 
+***Como criar Máquina Virtual no Microsoft Azure**
+
+![Screenshot_20240919-005152](https://github.com/user-attachments/assets/cba19ef6-a9d3-46ce-90fc-0544dd43fa49)
+
+
+1. Acesse o Portal do Azure
+
+Abra o navegador e acesse o Portal do Azure.
+
+Faça login com sua conta.
+
+
+2. Vá até "Máquinas Virtuais"
+
+No painel à esquerda, selecione "Máquinas Virtuais" ou busque por "Virtual Machines" na barra de pesquisa.
+
+
+3. Criar uma nova máquina virtual
+
+Clique em "Criar" no topo da página e escolha "Máquina Virtual".
+
+
+4. Configure as informações básicas
+
+Selecione a assinatura e grupo de recursos (ou crie um novo).
+
+Defina um nome para a máquina virtual.
+
+Escolha a região onde será hospedada.
+
+Defina a imagem do sistema operacional (por exemplo, Windows, Ubuntu, etc.).
+
+Selecione o tamanho da VM (CPU, RAM).
+
+
+5. Configurar autenticação
+
+Escolha o método de autenticação: Senha ou Chave SSH.
+
+Crie um nome de usuário e uma senha (ou insira a chave SSH).
+
+
+6. Configurar as opções de rede
+
+Use a rede padrão ou crie uma rede virtual.
+
+Configure o grupo de segurança de rede (NSG) para definir regras de firewall.
+
+
+7. Revisar e criar
+
+Revise todas as configurações e clique em "Revisar + Criar".
+
+Após a validação, clique em "Criar" para iniciar a implantação da máquina virtual.
+
+
+8. Acessar a máquina virtual
+
+Quando a máquina estiver pronta, você pode acessá-la:
+
+Se for Windows, use o Remote Desktop (RDP).
+
+Se for Linux, use SSH.
 
 
 
