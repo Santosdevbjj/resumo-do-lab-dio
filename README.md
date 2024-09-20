@@ -691,4 +691,294 @@ Se for Windows, use o Remote Desktop (RDP).
 Se for Linux, use SSH.
 
 
+**Máquinas virtuais do Azure** 
+
+![Screenshot_20240920-140650](https://github.com/user-attachments/assets/bab78d8b-0995-4519-b687-1255a93536e4)
+
+
+Com as VMs (Máquinas Virtuais) do Azure, você pode criar e usar VMs na nuvem. As VMs fornecem IaaS (infraestrutura como serviço) na forma de um servidor virtualizado e podem ser usadas de várias maneiras. Como em um computador físico, você pode personalizar todos os programas de software em execução na VM. As VMs são uma opção ideal quando você precisa de:
+
+Controle total sobre o SO (sistema operacional).
+Capacidade para executar um software personalizado.
+Usar configurações personalizadas de hospedagem.
+Uma VM do Azure oferece a flexibilidade da virtualização sem a necessidade de comprar e manter o hardware físico que a executa. No entanto, como uma oferta de IaaS, você ainda precisa configurar, atualizar e manter o software executado na VM.
+
+Você pode até mesmo criar ou usar uma imagem já criada para provisionar rapidamente VMs. Você pode criar e provisionar uma VM em minutos quando seleciona uma imagem de VM pré-configurada. Uma imagem é um modelo usado para criar uma VM e pode já incluir um sistema operacional e outros softwares, como ferramentas de desenvolvimento ou ambientes de hospedagem na Web.
+
+**Dimensionar VMs no Azure**
+
+Você pode executar VMs únicas para teste, desenvolvimento ou para tarefas secundárias. Ou pode agrupar VMs para fornecer alta disponibilidade, escalabilidade e redundância. O Azure também pode gerenciar o agrupamento de VMs para você com recursos como conjuntos de dimensionamento e conjuntos de disponibilidade. 
+
+**Area de trabalho virtual do Azure**
+
+Outro tipo de máquina virtual é a Área de Trabalho Virtual do Azure. A Área de Trabalho Virtual do Azure é um serviço de virtualização de área de trabalho e aplicativos que é executado na nuvem. Ele permite que você use uma versão do Windows hospedada na nuvem em qualquer localização. A Área de Trabalho Virtual do Azure opera em dispositivos e sistemas operacionais e funciona com aplicativos que você pode usar para acessar áreas de trabalho remotas ou a maioria dos navegadores modernos. 
+
+**Aprimorar a segurança**
+
+A Área de Trabalho Virtual do Azure fornece gerenciamento de segurança centralizado para áreas de trabalho dos usuários com o Microsoft Entra ID. Você pode habilitar a autenticação multifator para proteger as entradas do usuário. Você também pode proteger o acesso aos dados atribuindo RBACs (controles de acesso baseados em função) granulares aos usuários.
+
+Com a Área de Trabalho Virtual do Azure, os dados e aplicativos ficam separados do hardware local. A área de trabalho e os aplicativos reais estão em execução na nuvem, o que significa que o risco de dados confidenciais serem deixados em um dispositivo pessoal é reduzido. Além disso, as sessões de usuário são isoladas em ambientes de sessão única e de várias sessões. 
+
+**Implantação de Windows 10 ou do Windows 11 de várias sessões**
+
+A Área de Trabalho Virtual do Azure permite que você use a multissessão do Windows 10 ou Windows 11 Enterprise, o único sistema operacional baseado em cliente Windows que habilita vários usuários simultâneos em uma VM. A Área de Trabalho Virtual do Azure também fornece uma experiência mais consistente com suporte a aplicativos mais amplo em comparação com sistemas operacionais baseados no Windows Server. 
+
+**O que são contêineres?**
+
+Contêineres são um ambiente de virtualização. Assim como a execução de várias máquinas virtuais em um só host físico, você pode executar vários contêineres em apenas um host físico ou virtual. Diferentemente das máquinas virtuais, você não gerencia o sistema operacional para um contêiner. Máquinas virtuais parecem ser uma instância de um sistema operacional que você pode gerenciar e ao qual pode se conectar. Os contêineres são leves e projetados para serem criados, dimensionados e interrompidos dinamicamente. É possível criar e implantar máquinas virtuais à medida que a demanda do aplicativo aumenta, mas os contêineres são um método mais leve e ágil. Os contêineres foram projetados para permitir que você responda às alterações sob demanda. Com contêineres, você pode reiniciar rapidamente se houver uma falha ou de uma interrupção de hardware. Um dos mecanismos de contêiner mais populares é o Docker, e o Azure é compatível com o Docker.
+
+**Aplicativos de Contêiner do Azure**
+
+Os Aplicativos de Contêiner do Azure são semelhantes, em muitos aspectos, a uma instância de contêiner. Eles permitem que você comece a trabalhar imediatamente, removem a parte de gerenciamento de contêineres e são uma oferta de PaaS. Os Aplicativos de Contêiner têm benefícios extras, como a capacidade de incorporar balanceamento de carga e colocação em escala. Essas outras funções permitem que você seja mais flexível em seu design. 
+
+
+
+**Serviço de Kubernetes do Azure**
+
+O Serviço de Kubernetes do Azure (AKS) é um serviço de orquestração de contêiner. Um serviço de orquestração gerencia o ciclo de vida dos contêineres. Quando você está implantando uma frota de contêineres, o AKS pode tornar o gerenciamento de frota mais simples e eficiente. 
+
+
+
+**Funções do Azure**
+
+O Azure Functions é uma opção de computação sem servidor controlada por eventos que não requer a manutenção de máquinas virtuais ou contêineres. Se você criar um aplicativo usando VMs ou contêineres, esses recursos precisarão estar "em execução" para que seu aplicativo funcione. Com o Azure Functions, um evento desperta a função, reduzindo a necessidade de manter os recursos provisionados quando não há eventos. 
+
+
+
+**Benefícios do Azure Functions**
+
+Usar o Azure Functions é ideal quando você está preocupado apenas com o código que executa o serviço, e não com a plataforma ou a infraestrutura subjacente. As funções costumam ser usadas quando você precisa executar um trabalho em resposta a um evento (geralmente por meio de uma solicitação REST), um temporizador ou uma mensagem de outro serviço do Azure e quando esse trabalho pode ser concluído dentro de segundos.
+
+
+
+As funções são dimensionadas automaticamente com base na demanda, portanto, podem ser uma boa opção quando a demanda é variável.
+
+
+
+O Azure Functions executa seu código quando ele é acionado e desaloca automaticamente os recursos quando a função é concluída. Nesse modelo, o Azure cobra apenas pelo tempo de CPU usado durante a execução da função. 
+
+
+
+As funções são um componente chave da computação sem servidor. Elas também são uma plataforma de computação geral para executar qualquer tipo de código. Se as necessidades do aplicativo do desenvolvedor forem alteradas, você poderá implantar o projeto em um ambiente que não seja sem servidor. Essa flexibilidade permite gerenciar o dimensionamento, executar em redes virtuais e até mesmo isolar completamente as funções. 
+
+**Serviço de aplicativo do Azure**
+
+O Serviço de Aplicativo permite que você crie e hospede aplicativos Web, trabalhos em segundo plano, back-ends de dispositivos móveis e APIs RESTful na linguagem de programação de sua escolha sem gerenciar a infraestrutura. Ele oferece dimensionamento automático e alta disponibilidade. O Serviço de Aplicativo é compatível com o Windows e o Linux. Ele permite implantações automatizadas do GitHub, Azure DevOps ou qualquer repositório Git para dar suporte a um modelo de implantação contínua.
+
+O Serviço de Aplicativo do Azure é uma opção de hospedagem robusta que você pode usar para hospedar seus aplicativos no Azure. O Serviço de Aplicativo do Azure permite que você se concentre em criar e manter seu aplicativo, e o Azure se concentra em manter o ambiente em funcionamento.
+
+O Serviço de Aplicativo do Azure é um serviço com base em HTTP para hospedagem de aplicativos Web, APIs REST e back-ends móveis. Ele dá suporte a várias linguagens, incluindo .NET, .NET Core, Java, Ruby, Node.js, PHP ou Python. Ele também dá suporte a ambientes Windows e Linux.
+
+**Tipos de serviços de aplicativos**
+
+Com o Serviço de Aplicativo, você pode hospedar os estilos mais comuns de serviço de aplicativos, como:
+
+Aplicativos Web
+Aplicativos de API
+WebJobs
+Aplicativos móveis
+O Serviço de Aplicativo cuida da maioria das decisões de infraestrutura com as quais você lida ao hospedar aplicativos acessíveis pela Web:
+
+A implantação e o gerenciamento são integrados à plataforma.
+Pontos de extremidade podem ser protegidos.
+Sites podem ser dimensionados rapidamente para lidar com cargas de alto tráfego.
+O balanceamento de carga interno e o gerenciador de tráfego fornecem alta disponibilidade.
+Todos esses estilos de aplicativos são hospedados na mesma infraestrutura e compartilham esses benefícios. Essa flexibilidade torna o Serviço de Aplicativo a escolha ideal para hospedar aplicativos voltados para a Web. 
+
+
+**Aplicativos Web**
+
+O Serviço de Aplicativo inclui suporte completo para a hospedagem de aplicativos Web usando ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP ou Python. Você pode escolher Windows ou Linux como sistema operacional do host. 
+
+**Aplicativos de API**
+
+Da mesma forma como se hospeda um site, você pode criar APIs Web baseadas em REST usando a linguagem e a estrutura que você quiser. Receba o suporte completo do Swagger e a capacidade de empacotar e publicar sua API no Azure Marketplace. Os aplicativos produzidos podem ser consumidos por qualquer cliente baseado em HTTP ou em HTTPS.
+
+**WebJobs**
+
+Você pode usar o recurso do WebJobs para executar um script (.cmd, .bat, PowerShell ou Bash) ou um programa (.exe, Java, PHP, Python ou Node.js) no mesmo contexto de um aplicativo Web, aplicativo de API ou aplicativo móvel. Eles também podem ser agendados ou executados por um gatilho. O WebJobs geralmente é usado para executar tarefas em segundo plano como parte da lógica do aplicativo.
+
+**Aplicativos móveis**
+
+Use o recurso Aplicativos Móveis do Serviço de Aplicativo para criar rapidamente um back-end para aplicativos iOS e Android. Com apenas algumas ações no portal do Azure, você pode:
+
+Armazenar dados de aplicativo móvel em um Banco de Dados SQL baseado em nuvem.
+Autenticar os clientes em relação a provedores sociais comuns, como MSA, Google, Twitter e Facebook.
+Enviar notificações por push.
+Executar a lógica personalizada de back-end no C# ou Node.js.
+No lado do aplicativo móvel, há suporte do SDK para aplicativos nativos para iOS, Android, Xamarin e React.
+
+
+**As redes virtuais do Azure oferecem as seguintes funcionalidades de rede essenciais:**
+
+Isolamento e segmentação
+Comunicação pela Internet
+Comunicação entre recursos do Azure
+Comunicação com os recursos locais
+Rotear tráfego de rede
+Filtrar tráfego de rede
+Conectar redes virtuais 
+
+**Isolamento e segmentação**
+
+A rede virtual do Azure permite criar várias redes virtuais isoladas. Quando você configura uma rede virtual, define um espaço de endereço IP privado usando intervalos de endereços IP públicos ou privados. O intervalo de IP existe somente na rede virtual e não é roteável pela Internet. Você pode dividir esse espaço de endereços IP em sub-redes e alocar parte do espaço de endereço definido para cada sub-rede nomeada.
+
+Para resolução de nomes, você pode usar o serviço de resolução de nomes integrado ao Azure. Você também pode configurar a rede virtual para usar um servidor DNS interno ou externo. 
+
+
+**Conectar redes virtuais**
+
+Você pode vincular redes virtuais usando o emparelhamento dessas redes. O emparelhamento permite que duas redes virtuais se conectem diretamente entre si. O tráfego de rede entre redes emparelhadas é privado e viaja na rede de backbone da Microsoft, nunca entrando na Internet pública. O emparelhamento permite que os recursos em cada rede virtual se comuniquem entre si. Essas redes virtuais podem estar em regiões separadas. Esse recurso permite que você crie uma rede interconectada global por meio do Azure.
+
+As UDR (rotas definidas pelo usuário) permitem controlar as tabelas de roteamento entre sub-redes em uma rede virtual ou entre redes virtuais. Isso permite maior controle sobre o fluxo de tráfego de rede. 
+
+
+**Redes virtuais privadas do Azure**
+
+Uma VPN (rede virtual privada) usa um túnel criptografado dentro de outra rede. As VPNs costumam ser implantadas para conectar duas ou mais redes privadas confiáveis entre si em uma rede não confiável (normalmente a Internet pública). O tráfego é criptografado ao viajar pela rede não confiável para evitar interceptação ou outros ataques. As VPNs podem permitir que as redes compartilhem informações confidenciais de modo seguro e protegido. 
+
+
+**Failover do ExpressRoute**
+
+Outra opção de alta disponibilidade é configurar um gateway de VPN como um caminho de failover seguro para conexões ExpressRoute. Os circuitos ExpressRoute têm resiliência integrada. Porém, não são imunes a problemas físicos que afetam os cabos que fornecem conectividade nem a interrupções que afetam toda a localização do ExpressRoute. Em cenários de alta disponibilidade, nos quais há risco associado a uma interrupção de um circuito do ExpressRoute, você também pode provisionar um gateway de VPN que usa a Internet como um método alternativo de conectividade. Dessa forma, você pode garantir que sempre haja uma conexão com as redes virtuais. 
+
+
+**Azure ExpressRoute**
+
+
+O Azure ExpressRoute permite que você estenda suas redes locais para a nuvem da Microsoft em uma conexão privada com a ajuda de um provedor de conectividade. Essa conexão é chamada de Circuito do ExpressRoute. Com o ExpressRoute, você pode estabelecer conexões com os serviços em nuvem da Microsoft, como o Microsoft Azure e o Microsoft 365. Esse recurso permite que você conecte escritórios, datacenters ou outras instalações à nuvem da Microsoft. Cada local teria o próprio circuito do ExpressRoute. 
+
+
+
+**Recursos e benefícios do ExpressRoute**
+
+Há vários benefícios de usar o ExpressRoute como o serviço de conexão entre o Azure e as redes locais.
+
+
+Conectividade com os serviços de nuvem da Microsoft em todas as regiões da região geopolítica.
+
+Conectividade global com os serviços da Microsoft
+
+em todas as regiões com o Alcance Global do ExpressRoute.
+
+Roteamento dinâmico entre sua rede e a Microsoft por meio do BGP (Border Gateway Protocol).
+
+
+Redundância interna em cada local de emparelhamento para proporcionar maior confiabilidade. 
+
+
+
+**Conectividade com serviços em nuvem da Microsoft**
+
+O ExpressRoute permite acesso direto aos seguintes serviços em todas as regiões:
+
+
+
+Microsoft Office 365
+
+Microsoft Dynamics 365
+
+Serviços de computação do Azure, como as Máquinas Virtuais do Azure
+
+
+Serviços de Nuvem do Azure, como o Azure Cosmos DB e o Armazenamento do Azure 
+
+
+
+**DNS do Azure**
+
+O DNS do Azure é um serviço de hospedagem para domínios DNS que fornece a resolução de nomes usando a infraestrutura do Microsoft Azure. Ao hospedar seus domínios no Azure, você pode gerenciar seus registros DNS usando as mesmas credenciais, APIs, ferramentas e cobrança que seus outros serviços do Azure. 
+
+**Benefícios do DNS do Azure**
+
+O DNS do Azure usa o escopo e a escala do Microsoft Azure para proporcionar inúmeros benefícios, incluindo:
+
+Confiabilidade e desempenho
+Segurança
+Facilidade de uso
+Personalizar redes virtuais
+Registros de alias 
+
+**Criar uma máquina virtual do Windows no portal do Azure**
+
+
+As máquinas virtuais do Azure (VMs) podem ser criadas através do portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar VMs e os respetivos recursos associados.  
+
+
+**Iniciar sessão no Azure**
+
+**Inicie sessão no portal do Azure.**
+
+**Criar a máquina virtual
+Insira máquinas virtuais na pesquisa.**
+
+**Em Serviços, selecione Máquinas virtuais.**
+
+Na página Máquinas virtuais, selecione Criar e, em seguida, Máquina virtual do Azure. A página Criar uma máquina virtual é aberta.
+
+Em Detalhes da instância, insira myVM para o nome da máquina virtual e escolha Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2 para a imagem. Mantenha as restantes predefinições inalteradas.
+Em Conta de administrador, forneça um nome de utilizador, como utilizadordoazure, e uma palavra-passe. A palavra-passe tem de ter, pelo menos, 12 carateres e cumprir os requisitos de complexidade definidos. 
+
+Em Regras de porta de entrada, escolha Permitir portas selecionadas e, em seguida, selecione RDP (3389) e HTTP (80) na lista suspensa. 
+
+Mantenha as restantes predefinições e, em seguida, selecione o botão Rever + criar na parte inferior da página. 
+
+
+Após a execução da validação, selecione o botão Criar na parte inferior da página. 
+
+
+Após a conclusão da implantação, selecione Ir para o recurso. 
+
+
+Connect to virtual machine (Ligar à máquina virtual)
+Crie uma ligação de ambiente de trabalho remoto para a máquina virtual. Estas instruções indicam como ligar à VM a partir de um computador Windows. Num Mac, precisa de um cliente RDP como este Cliente de Ambiente de Trabalho Remoto a partir da Mac App Store.
+
+Na página de visão geral da sua máquina virtual, selecione Conectar >RDP. 
+
+Na página de visão geral da sua máquina virtual, selecione Conectar >RDP. 
+
+Na guia Conectar com RDP, mantenha as opções padrão para se conectar por endereço IP, pela porta 3389, e clique em Baixar arquivo RDP.
+
+
+Abra o ficheiro RDP transferido e clique em Ligar quando lhe for pedido.
+
+Na janela Segurança do Windows, selecione Mais escolhas e Utilizar uma conta diferente. Digite o nome de usuário como nome de usuário localhost\, digite a senha criada para a máquina virtual e clique em OK.
+
+Poderá receber um aviso de certificado durante o processo de início de sessão. Clique em Sim ou Continuar para criar a ligação. 
+
+
+**Instalar o servidor Web**
+
+Para ver a VM em ação, instale o servidor Web do IIS. Abra uma janela do PowerShell na VM e execute o comando seguinte: 
+
+
+Ver a página de boas-vindas do IIS
+No portal, selecione a VM e, na visão geral da VM, passe o mouse sobre o endereço IP para mostrar Copiar para a área de transferência. Copie o endereço IP e cole-o num separador do browser. A página de boas-vindas padrão do IIS será aberta e deverá ter esta aparência: 
+
+
+
+**Clean up resources (Limpar recursos)
+Eliminar recursos**
+
+Quando já não forem necessários, pode eliminar o grupo de recursos, a máquina virtual e todos os recursos relacionados.
+
+Na página Visão geral da VM, selecione o link Grupo de recursos .
+Na parte superior da página do grupo de recursos, selecione Excluir grupo de recursos.
+Uma página será aberta avisando que você está prestes a excluir recursos. Digite o nome do grupo de recursos e selecione Excluir para concluir a exclusão dos recursos e do grupo de recursos. 
+
+
+**Encerramento automatizado**
+
+Se a VM ainda for necessária, o Azure fornecerá um recurso de desligamento automático para máquinas virtuais para ajudar a gerenciar custos e garantir que você não seja cobrado por recursos não utilizados.
+
+Na seção Operações da VM, selecione a opção Desligamento automático.
+Será aberta uma página onde poderá configurar o tempo de encerramento automático. Selecione a opção Ativado para ativar e, em seguida, defina um horário que funcione para você.
+Depois de definir a hora, selecione Salvar na parte superior para ativar a configuração de desligamento automático. 
+
+
+**Nota**
+
+Lembre-se de configurar o fuso horário corretamente para corresponder às suas necessidades, pois (UTC) Tempo Universal Coordenado é a configuração padrão no menu suspenso Fuso horário. 
+
+
 
