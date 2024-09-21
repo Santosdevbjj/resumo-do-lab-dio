@@ -982,3 +982,139 @@ Lembre-se de configurar o fuso horário corretamente para corresponder às suas 
 
 
 
+**Armazenamento do Azure**
+
+![Screenshot_20240921-002715](https://github.com/user-attachments/assets/1a128da8-d676-4665-8b13-9e29d55c80c7)
+
+
+.A plataforma do Armazenamento do Microsoft Azure é a solução de armazenamento em nuvem da Microsoft para cenários de armazenamento de dados modernos. O Armazenamento do Microsoft Azure oferece armazenamento altamente disponível, altamente escalonável, durável e seguro para uma variedade de objetos de dados na nuvem. Os objetos de dados do Armazenamento do Microsoft Azure podem ser acessados de qualquer lugar do mundo por HTTP ou HTTPS por meio de uma API REST. O Armazenamento do Microsoft Azure também oferece bibliotecas de clientes para desenvolvedores que criam aplicativos ou serviços com .NET, Java, Python, JavaScript, C++ e Go. Desenvolvedores e profissionais de TI podem usar o Azure PowerShell e a CLI do Azure para escrever scripts para gerenciamento de dados ou tarefas de configuração. O portal do Azure e o Gerenciador de Armazenamento do Azure fornecem as ferramentas de interface do usuário para interagir com o Armazenamento do Microsoft Azure.
+
+**Benefícios do Armazenamento Azure**
+
+Os serviços de Armazenamento do Microsoft Azure oferecem os seguintes benefícios aos desenvolvedores de aplicativos e profissionais de TI:
+
+Durável e altamente disponível. A redundância garante a segurança dos seus dados no caso de falhas de hardware transitórias. Você também pode optar por replicar os dados em data centers ou regiões geográficas para obter mais proteção contra catástrofes locais ou desastres naturais. Os dados replicados dessa maneira permanecem altamente disponíveis no caso de uma interrupção inesperada.
+Segura. Todos os dados gravados em uma conta de armazenamento do Azure são criptografados pelo serviço. O Armazenamento do Azure oferece um controle refinado sobre quem possui acesso aos seus dados.
+Escalonável. O Armazenamento do Azure foi concebido para ser altamente escalonável e atender às necessidades de desempenho e armazenamento de dados dos aplicativos atuais.
+Gerenciado. o Azure cuida da manutenção de hardware, das atualizações e dos problemas críticos para você.
+Acessível. Os dados no Armazenamento do Azure são acessíveis de qualquer lugar no mundo por HTTP ou HTTPS. A Microsoft fornece bibliotecas de clientes para o Armazenamento do Microsoft Azure em várias linguagens, incluindo .NET, Java, Node.js, Python, Go, entre outras, bem como uma API REST bem desenvolvida. O Armazenamento do Azure oferece suporte para scripts no Azure PowerShell ou na CLI do Azure. E o Portal do Azure e o Gerenciador de Armazenamento do Azure oferecem soluções visualmente fáceis para o trabalho com os seus dados.
+Serviços de dados de armazenamento do Azure
+A plataforma de Armazenamento do Microsoft Azure inclui os seguintes serviços de dados:
+
+**Blobs do Azure:** um repositório de objetos altamente escalonável para texto e dados binários. Ela também inclui suporte para análise de Big Data por meio do Data Lake Storage Gen2.
+Arquivos do Azure: compartilhamentos de arquivos gerenciados para implantações locais e em nuvem.
+
+**Azure Elastic SAN:** uma solução totalmente integrada que simplifica a implantação, a escala, o gerenciamento e a configuração de uma SAN no Azure.
+Filas do Azure: um armazenamento de mensagens para um sistema de mensagens confiável entre componentes do aplicativo.
+Tabelas do Azure: Um armazenamento NoSQL para um armazenamento sem esquemas de dados estruturados.
+
+**Azure Managed Disks:** volumes de armazenamento no nível do bloco para VMs do Azure.
+
+**Armazenamento de Contêineres do Azure:** um serviço de gerenciamento de volume, implantação e orquestração criado nativamente para contêineres.
+Cada serviço é acessado por meio de uma conta de armazenamento com um endereço exclusivo. Para usá-los, consulte Criar uma conta de armazenamento.
+
+**Além disso, o Azure fornece o seguinte armazenamento especializado:** 
+
+Azure NetApp Files: armazenamento de arquivos empresariais com NetApp – facilita para que profissionais de armazenamento e LOB (linha de negócios) de empresas e façam a migração e a execução de aplicativos complexos baseados em arquivo, sem alteração de código. O Azure NetApp Files é gerenciado por meio de contas do NetApp e pode ser acessado por meio de volumes NFS, SMB e protocolo duplo. Para começar a usá-lo, confira Criar uma conta do NetApp.
+Para obter ajuda ao decidir quais serviços de dados usar para o cenário, confira Examinar as opções de armazenamento no Microsoft Cloud Adoption Framework. 
+
+
+**Armazenamento de Blobs**
+O Armazenamento de Blobs do Azure é uma solução de armazenamento de objetos da Microsoft para a nuvem. O armazenamento de Blobs é otimizado para armazenar grandes quantidades de dados não estruturados, como texto ou dados binários.
+
+**O Armazenamento de Blobs é ideal para:**
+
+Fornecimento de imagens ou de documentos diretamente a um navegador.
+Armazenamento de arquivos para acesso distribuído.
+Transmissão por streaming de áudio e vídeo.
+Armazenamento de dados de backup e restauração, recuperação de desastres e arquivamento.
+Armazenamento de dados para análise por um serviço local ou hospedado no Azure. 
+Azure Elastic SAN
+O Azure Elastic SAN (rede de área de armazenamento) é a resposta da Microsoft para o problema de otimização de carga de trabalho e integração entre os bancos de dados em grande escala e aplicativos críticos de desempenho intensivo. O Elastic SAN é uma solução totalmente integrada que simplifica a implantação, a escala, o gerenciamento e a configuração de uma SAN, oferecendo funcionalidades de nuvem internas, como alta disponibilidade.
+
+O Elastic SAN foi criado para cargas de trabalho com uso intensivo de E/S em grande escala e bancos de dados de nível superior, como SQL e MariaDB, e suporte a hospedagem de cargas de trabalho em máquinas virtuais ou contêineres, como o Serviço de Kubernetes do Azure. Os volumes do Elastic SAN são compatíveis com uma ampla variedade de recursos de computação por meio do protocolo iSCSI. Alguns outros benefícios do Elastic SAN incluem uma interface de gerenciamento e implantação simplificada. Como você pode gerenciar o armazenamento para vários recursos de computação em uma só interface e otimização de custo. 
+
+
+**Redundância**
+
+Para garantir que seus dados sejam duráveis, o Armazenamento do Microsoft Azure armazena várias cópias de seus dados. Quando você configura sua conta de armazenamento, você seleciona uma opção de redundância. Para obter mais informações, confira Redundância do Armazenamento do Microsoft Azure e Redundância de dados dos Arquivos do Azure.
+
+O Azure NetApp Files fornece armazenamento com redundância local com disponibilidade de 99,99%. 
+
+
+**Redundância do Armazenamento do Azure**
+
+O Armazenamento do Azure sempre armazena várias cópias dos seus dados para protegê-los contra eventos planejados e não planejados. Exemplos desses eventos incluem falhas de hardware transitórias, falhas de rede ou energia e grandes desastres naturais. A redundância garante que sua conta de armazenamento atenda às suas metas de disponibilidade e durabilidade mesmo diante de falhas.
+
+Ao decidir qual opção de redundância é melhor para seu cenário, considere os benefícios comparativos entre custos menores e maior disponibilidade. Os fatores que ajudam a determinar qual opção de redundância você deve escolher incluem:
+
+Como os dados são replicados dentro da região primária
+Se os dados são ou não replicados para uma segunda região que está geograficamente distante da região primária, como proteção contra desastres regionais (replicação geográfica).
+Se o aplicativo requer acesso de leitura aos dados replicados na região secundária quando a região primária ficar não disponível por algum motivo (replicação geográfica com acesso de leitura). 
+Os serviços que compõem o Armazenamento do Azure são gerenciados por meio de um recurso comum do Azure chamado de conta de armazenamento. A conta de armazenamento representa um pool de armazenamento compartilhado que pode ser usado para implantar recursos de armazenamento, como contêineres de blob (Armazenamento de Blobs), compartilhamentos de arquivo (Arquivos do Azure), tabelas (Armazenamento de Tabelas) ou filas (Armazenamento de Filas). 
+
+**Redundância na região primária**
+
+Os dados em uma conta de Armazenamento do Azure são sempre replicados três vezes na região primária. O Armazenamento do Azure oferece duas opções de como os dados são replicados na região primária:
+
+**O armazenamento com redundância local (LRS)**
+
+copia seus dados de forma síncrona três vezes em um único local físico na região primária. O LRS é a opção de replicação menos dispendiosa, mas não é recomendada para aplicativos que exigem alta disponibilidade ou durabilidade.
+O Armazenamento com redundância de zona (ZRS) copia seus dados de forma síncrona em três zonas de disponibilidade do Azure na região primária. Para aplicativos que exigem alta disponibilidade, a Microsoft recomenda usar o ZRS na região primária e também replicar para uma região secundária. 
+
+**Observação**
+
+A Microsoft recomenda usar o ZRS na região primária para cargas de trabalho do Azure Data Lake Storage Gen2. 
+
+
+**Armazenamento com redundância local
+O LRS (armazenamento com redundância local)**
+
+replica a conta de armazenamento três vezes em um só data center na região primária. O armazenamento com redundância local (LRS) fornece pelo menos **99,999999999% (11 noves)** de durabilidade dos objetos em um determinado ano.
+
+O LRS é a opção de redundância de menor custo e oferece a menor durabilidade em comparação com outras opções. O LRS protege seus dados contra falhas de unidade e rack do servidor. No entanto, se ocorrer um desastre como incêndio ou inundação no datacenter, todas as réplicas de uma conta de armazenamento que use o LRS poderão ser perdidas ou irrecuperáveis. Para atenuar esse risco, a Microsoft recomenda usar o armazenamento com redundância de zona (ZRS), o armazenamento com redundância geográfica (GRS) ou o armazenamento com redundância de zona geográfica (GZRS).
+
+Uma solicitação de gravação para uma conta de armazenamento que está usando o LRS ocorre de forma síncrona. A operação de gravação retorna com êxito somente depois que os dados são gravados em todas as três réplicas.
+
+O diagrama a seguir mostra como os dados são replicados em um único data center com o LRS: 
+
+
+**LRS é uma boa opção para os seguintes cenários:**
+
+Se seu aplicativo armazenar dados que possam ser facilmente reconstruídos, considere optar pelo LRS.
+Se seu aplicativo estiver restrito a replicar dados somente em uma região devido a requisitos de governança de dados, considere optar pelo LRS. Em alguns casos, as regiões emparelhadas nas quais os dados são replicados geograficamente podem estar dentro de outra região. Para obter mais informações sobre pares de regiões, consulte Regiões do Azure.
+Se seu cenário estiver usando discos não gerenciados do Azure, considere o uso de LRS. É possível criar uma conta de armazenamento para discos não gerenciados do Azure que usam GRS, mas isso não é recomendável devido a possíveis problemas de consistência em relação à replicação geográfica assíncrona. 
+
+**Armazenamento com redundância de zona
+O ZRS (armazenamento com redundância de zona)**
+
+replica a conta de armazenamento de modo síncrono em três zonas de disponibilidade do Azure na região primária. Cada zona de disponibilidade é um local físico separado com energia, resfriamento e rede independentes. O ZRS oferece durabilidade para recursos de armazenamento de, pelo menos, **99,9999999999% (doze noves)** ao ano.
+
+Quando você usa o ZRS, seus dados ainda podem ser acessados por operações de leitura e de gravação, mesmo em caso de não disponibilidade de uma zona. Se uma zona se tornar indisponível, o Azure realizará atualizações da rede, como o redirecionamento de DNS (Sistema de Nomes de Domínio). Essas atualizações poderiam afetar seu aplicativo se você estiver acessando os dados antes que as atualizações sejam concluídas. Ao criar aplicativos para ZRS, siga práticas para manipulação de falha transitórias, incluindo a implementação de políticas de novas tentativas com retirada exponencial.
+
+Uma solicitação de gravação para uma conta de armazenamento que está usando o ZRS ocorre de forma síncrona. A operação de gravação retorna com êxito somente depois que os dados são gravados em todas as réplicas nas três zonas de disponibilidade. Se uma zona de disponibilidade estiver temporariamente indisponível, a operação retornará com êxito depois que os dados forem gravados em todas as zonas disponíveis.
+
+A Microsoft recomenda usar o ZRS na região primária para cenários que exigem alta disponibilidade. O ZRS também é recomendado para restringir a replicação de dados para uma região específica para atender aos requisitos de governança de dados.
+
+A Microsoft recomenda o uso do ZRS para cargas de trabalho de Arquivos do Azure. Quando uma zona fica não disponível, não é necessário remontar os compartilhamentos de arquivo do Azure dos clientes conectados. 
+
+Armazenamento com redundância geográfica
+O armazenamento com redundância geográfica (GRS) copia seus dados de forma síncrona três vezes em um único local físico na região primária usando o LRS. Em seguida, ele copia seus dados de forma assíncrona para um único local físico em uma região secundária que está a centenas de quilômetros de distância da região primária. O GRS oferece durabilidade para recursos de armazenamento de, pelo menos, **99,99999999999999% (dezesseis noves)** ao ano.
+
+Uma operação de gravação primeiro é confirmada para o local primário e replicados usando o LRS. A atualização, em seguida, é replicada assincronamente para a região secundária. Quando dados são gravados para o local secundário, eles também são replicados dentro desse local usando o LRS. 
+
+
+**Armazenamento com redundância de zona geográfica**
+
+O armazenamento com redundância de zona geográfica (GZRS) combina a alta disponibilidade fornecida pela redundância entre zonas de disponibilidade com a proteção contra interrupções regionais fornecidas pela replicação geográfica. Os dados de uma conta de armazenamento GZRS são copiados em três zonas de disponibilidade do Azure na região primária. Além disso, os dados também são replicados para uma região geográfica secundária para proteção contra desastres regionais. A Microsoft recomenda o uso do GZRS para aplicativos que exigem consistência, durabilidade e disponibilidade máximas, excelente desempenho e resiliência para recuperação de desastres.
+
+Com uma conta de armazenamento GZRS, você pode continuar lendo e gravando dados se uma zona de disponibilidade ficar indisponível ou não puder ser recuperada. Ademais, seus dados também permanecem duráveis durante uma interrupção regional completa ou um desastre em que a região primária não possa ser recuperada. O GZRS é projetado para fornecer durabilidade de, pelo menos, **99,99999999999999 % (dezesseis noves)** dos objetos em determinado ano.
+
+
+
+
+
+
+
+
+
