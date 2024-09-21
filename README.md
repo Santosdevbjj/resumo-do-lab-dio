@@ -1112,7 +1112,7 @@ Com uma conta de armazenamento GZRS, você pode continuar lendo e gravando dados
 
 **Segurança e Identidade no Azure**
 
-![Screenshot_20240921-155258](https://github.com/user-attachments/assets/c383d5f5-4ff6-459b-ae2f-8aca5ef5015b)
+![Screenshot_20240921-172647](https://github.com/user-attachments/assets/8be81b7e-7985-496e-beb7-fe0d71dbc7da)
 
 
 No Azure, a gestão de identidade, acesso e segurança é fundamental para garantir que os recursos sejam protegidos e acessados somente por usuários e serviços autorizados. Aqui estão os principais conceitos relacionados a essas áreas:
@@ -1509,9 +1509,8 @@ As identidades gerenciadas são usadas para autenticar recursos do Azure de form
 
 O Azure AD oferece uma gama completa de métodos de autenticação que atendem tanto a usuários finais quanto a aplicativos e serviços, com foco em segurança, flexibilidade e integração com sistemas locais e ambientes híbridos. Dependendo do cenário e das necessidades da organização, você pode optar por uma ou mais dessas soluções para garantir um ambiente seguro e eficiente.
 
-....
 
-O Microsoft Entra ID (anteriormente conhecido como Azure Active Directory) é um serviço de gerenciamento de identidades e acesso baseado em nuvem da Microsoft. Ele permite que organizações gerenciem usuários e grupos, controlem o acesso a aplicativos e recursos, e implementem políticas de segurança. Algumas das principais funcionalidades incluem:
+**O Microsoft Entra ID (anteriormente conhecido como Azure Active Directory)** é um serviço de gerenciamento de identidades e acesso baseado em nuvem da Microsoft. Ele permite que organizações gerenciem usuários e grupos, controlem o acesso a aplicativos e recursos, e implementem políticas de segurança. Algumas das principais funcionalidades incluem:
 
 Autenticação: Suporte a métodos de autenticação, incluindo autenticação multifator (MFA) e autenticação baseada em risco.
 
@@ -1526,7 +1525,7 @@ Gerenciamento de Identidade: Ferramentas para provisionamento e gerenciamento de
 
 O Entra ID é fundamental para a implementação de uma estratégia de segurança robusta em ambientes híbridos e na nuvem.
 
-...
+
 Microsoft Entra ID: Seu Portão de Acesso Seguro à Nuvem
 O Microsoft Entra ID é um serviço fundamental da Microsoft que gerencia as identidades e controla o acesso de usuários a diversos recursos, tanto na nuvem quanto em ambientes locais. Imagine-o como um porteiro inteligente que verifica a identidade de cada pessoa que tenta entrar em um prédio e decide quais áreas ela pode acessar.
 Em resumo:
