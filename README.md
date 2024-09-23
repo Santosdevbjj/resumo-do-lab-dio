@@ -1985,8 +1985,346 @@ O Azure PowerShell oferece dois comandos para aplicar tags: New-AzTag e Update-A
 Você pode instalar utilizar o PowerShell através da sua máquina local, instalando o módulo Az.Resources 1.12.0 ou posterior. É possível verificar sua versão atual com Get-InstalledModule -Name Az.Resources. Pode ser instalado aquele módulo ou instalar o  instalar o Azure PowerShell  3.6.1 ou posterior. Além disso é possível através do cloud shell direto no portal do Azure.  
 
 
-O New-AzTag substitui todas as marcas no recurso, no grupo de recursos ou na assinatura. Na chamada do comando, passe a ID de recurso da entidade que deseja marcar. O exemplo a seguir aplica um conjunto de marcas a uma virtual machine. 
+**O New-AzTag** substitui todas as marcas no recurso, no grupo de recursos ou na assinatura. Na chamada do comando, passe a ID de recurso da entidade que deseja marcar. O exemplo a seguir aplica um conjunto de marcas a uma virtual machine. 
 
+
+**O que é o Azure Policy?**
+
+![Screenshot_20240923-130849](https://github.com/user-attachments/assets/72d883e7-3b26-4fdc-b4b1-f817344c7437)
+
+
+**O Azure Policy ajuda a impor** padrões organizacionais e a avaliar a conformidade em escala. Por meio do painel de conformidade, ele fornece uma exibição agregada para avaliar o estado geral do ambiente, com a capacidade de drill down para a granularidade por recurso, por política. Ele também ajuda a deixar seus recursos em conformidade por meio da correção em massa de recursos existentes e da correção automática para novos recursos. 
+
+**Casos de uso comuns do Azure Policy** incluem implementar a governança para consistência de recursos, conformidade regulatória, segurança, custo e gerenciamento. As definições de política para esses casos de uso comuns já estão disponíveis em seu ambiente do Azure como itens interno para ajudar você a começar a usar.
+
+Especificamente, algumas ações úteis de governança que você pode impor com o Azure Policy incluem:
+
+Garantir que a equipe implante recursos do Azure apenas em regiões permitidas
+Impor a aplicação consistente de marcas taxonômicas
+Exigir que os recursos enviem logs de diagnóstico a um workspace do Log Analytics
+É importante reconhecer que, com a introdução do Azure Arc, você pode estender a governança baseada em políticas para diferentes provedores de nuvem e até mesmo para os datacenters locais.
+
+Todos os dados e objetos do Azure Policy são criptografados em repouso. Para obter mais informações, confira Criptografia de dados em repouso do Azure. 
+
+**Visão geral**
+
+O Azure Policy avalia os recursos e as ações no Azure comparando as propriedades desses recursos com as regras de negócios. Essas regras de negócio, descritas em Formato JSON, são conhecidas como definições de política. Para simplificar o gerenciamento, várias regras de negócio podem ser agrupadas para formar uma iniciativa de política (às vezes chamada de policySet). Depois que as regras de negócios tiverem sido formadas, a definição ou a iniciativa da política será atribuída a qualquer escopo de recursos compatível com o Azure, como grupos de gerenciamento, assinaturas, grupos de recursos ou recursos individuais. A atribuição se aplica a todos os recursos dentro do escopo do Resource Manager dessa atribuição. Os subescopos podem ser excluídos, se necessário. Para obter mais informações, confira Escopo no Azure Policy.
+
+O Azure Policy usa um formato JSON para formar a lógica que a avaliação usa para determinar se um recurso está em conformidade. As definições incluem metadados e a regra de política. A regra definida pode usar funções, parâmetros, operadores lógicos, condições e aliases de propriedade para corresponder exatamente ao cenário desejado. A regra de política determina quais recursos no escopo da atribuição são avaliados. 
+
+Entender os resultados da avaliação
+Os recursos são avaliados em momentos específicos durante o ciclo de vida do recurso, o ciclo de vida de atribuição de política e para avaliação regular de conformidade contínua. A seguir estão os horários ou eventos que causam a avaliação de um recurso:
+
+Um recurso é criado ou atualizado em um escopo com uma atribuição de política.
+Uma política ou iniciativa foi recentemente atribuída a um escopo.
+Uma política ou iniciativa já atribuída a um escopo foi atualizada.
+Durante o ciclo de avaliação de conformidade padrão, que ocorre uma vez a cada 24 horas.
+Para obter informações detalhadas sobre quando e como a avaliação de política ocorre, confira Gatilhos de avaliação.
+
+Controlar a resposta a uma avaliação
+As regras de negócio para lidar com recursos sem conformidade variam muito entre as organizações. Exemplos de como uma organização deseja que a plataforma responda a um recurso sem conformidade, incluindo:
+
+Negar a alteração do recurso
+Registrar a alteração no recurso
+Alterar o recurso antes da alteração
+Alterar o recurso após a alteração
+Implantar recursos em conformidade relacionados
+Bloquear ações em recursos
+O Azure Policy torna cada uma dessas respostas de negócios possível por meio da aplicação de efeitos. Os efeitos são definidos na parte de regra de política da definição de política. 
+
+Corrigir recursos sem conformidade
+Embora esses efeitos afetem um recurso principalmente quando o recurso é criado ou atualizado, o Azure Policy também é compatível com lidar com recursos que não estão em conformidade existentes sem a necessidade de alterá-los. Para obter mais informações sobre como deixar os recursos existentes em conformidade, confira como corrigir recursos. 
+
+**Azure Policy e Azure RBAC**
+
+Há algumas diferenças importantes entre o Azure Policy e o Azure RBAC (controle de acesso baseado em função). O Azure Policy avalia o estado examinando as propriedades dos recursos que são representados no Resource Manager e as propriedades de alguns provedores de recursos. O Azure Policy garante que o estado do recurso esteja em conformidade com as regras de negócio sem levar em conta quem fez a alteração ou quem tem permissão para fazer uma alteração. O Azure Policy por meio do efeito DenyAction também podem bloquear determinadas ações em recursos. Alguns recursos do Azure Policy, como definições de política, definições de iniciativa e atribuições, ficam visíveis para todos os usuários. Esse design permite transparência para todos os usuários e serviços em relação a quais regras de política são definidas no ambiente.
+
+O Azure RBAC concentra-se em gerenciar as ações do usuário em escopos diferentes. Se o controle de uma ação for necessário com base em informações do usuário, o Azure RBAC será a ferramenta correta a ser usada. Mesmo que um indivíduo tenha acesso para executar uma ação, se o resultado for um recurso que não está em conformidade, o Azure Policy ainda bloqueará a criação ou a atualização.
+
+**A combinação do RBAC do Azure** e do Azure Policy fornece controle de escopo completo no Azure. 
+
+
+Permissões do Azure RBAC no Azure Policy
+O Azure Policy tem várias permissões, conhecidas como operações, em dois provedores de recursos:
+
+Microsoft.Authorization
+Microsoft.PolicyInsights
+Muitas funções internas concedem permissão a recursos do Azure Policy. A função Colaborador da Política de Recursos inclui a maioria das operações do Azure Policy. O proprietário tem direitos totais. Tanto o Colaborador quanto o Leitor têm acesso a todas as operações de ler do Azure Policy.
+
+O colaborador pode disparar a correção de recursos, mas não pode criar ou atualizar definições nem atribuições. O Administrador de Acesso do Usuário é necessário para conceder a identidade gerenciada nas permissões necessárias de atribuições deployIfNotExists ou modify. 
+
+
+**Entenda o bloqueio de recursos nos Blueprints do Azure**
+
+
+A criação de ambientes consistentes em escala só é realmente valiosa se houver um mecanismo para manter essa consistência. Este artigo explica como o bloqueio de recursos funciona em Blueprints do Azure. 
+
+Observação
+
+Os bloqueios de recursos implantados pelo Azure Blueprints são aplicados apenas a recursos que não são de extensão implantados pela atribuição do blueprint. Os recursos existentes, como aqueles em grupos de recursos que já existem, não têm bloqueios adicionados a eles.
+
+
+**Estados e modos de bloqueio**
+
+O modo de bloqueio se aplica à atribuição de blueprint e tem três opções: Não Bloquear, Somente Leitura ou Não Excluir. O modo de bloqueio é configurado durante a implantação de artefato em uma atribuição de blueprint. Um modo de bloqueio diferente pode ser definido pela atualização da atribuição de blueprint. No entanto, os modos de bloqueio não podem ser alterados fora do Azure Blueprints.
+
+Recursos criados por artefatos em uma atribuição de blueprint possuem quatro estados: Desbloqueados, Somente Leitura ou Não É Possível Editar/Excluir ou Não É Possível Excluir. Cada tipo de artefato pode estar no estado Não Bloqueado. A seguinte tabela pode ser usada para determinar o estado de um recurso: 
+
+
+Substituindo os estados de bloqueio
+Normalmente, é possível que alguém com o controle de acesso baseado em função do Azure (RBAC) apropriado na assinatura, como a função de “Proprietário”, possa alterar ou excluir qualquer recurso. Esse acesso não é o caso quando o Azure Blueprints aplica o bloqueio como parte de uma atribuição implantada. Se a atribuição foi definida com a opção Somente Leitura ou Não Excluir, nem mesmo o proprietário da assinatura pode executar a ação bloqueada no recurso protegido.
+
+Isso protege a consistência do plano gráfico em definido e o ambiente em que ele foi projetado para criar a partir de exclusão acidental ou através de programação ou de alteração. 
+
+
+Atribuir no grupo de gerenciamento
+A única opção para impedir que os proprietários da assinatura removam uma atribuição de blueprint é atribuir o blueprint a um grupo de gerenciamento. Nesse cenário, somente os Proprietários do grupo de gerenciamento têm as permissões necessárias para remover a atribuição do blueprint.
+
+Para atribuir o blueprint a um grupo de gerenciamento em vez de uma assinatura, a chamada à API REST muda para esta aparência: 
+
+
+O grupo de gerenciamento definido pelo {assignmentMG} deve estar dentro da hierarquia do grupo de gerenciamento ou ser o mesmo grupo de gerenciamento em que a definição do blueprint é salva. 
+
+A principal diferença nesse corpo de solicitação e um que está sendo atribuído a uma assinatura é a propriedade properties.scope. Essa propriedade necessária deve ser definida como a assinatura à qual a atribuição de blueprint se aplica. A assinatura deve ser um filho direto da hierarquia do grupo de gerenciamento em que a atribuição de blueprint está armazenada. 
+
+
+**Observação**
+
+Um blueprint atribuído ao escopo do grupo de gerenciamento ainda funciona como uma atribuição de blueprint de nível de assinatura. A única diferença é onde a atribuição de blueprint é armazenada para impedir que os proprietários da assinatura removam a atribuição e os bloqueios associados. 
+
+
+Removendo os estados de bloqueio
+Se for necessário modificar ou excluir um recurso protegido por uma atribuição, haverá duas maneiras de fazer isso.
+
+Atualizar a atribuição de blueprint para um modo de bloqueio igual a Não Bloquear
+Excluir a atribuição de blueprint
+Quando a atribuição é removida, os bloqueios criados pelo Azure Blueprints são removidos. No entanto, o recurso é deixado para trás e precisaria ser excluído por meios normais. 
+
+
+Como o plano gráfico bloqueios trabalho
+Uma ação de negação do RBAC do Azure para negar atribuições é aplicada aos recursos de artefato durante a atribuição de um blueprint se a atribuição selecionou a opção Somente Leitura ou Não Excluir. A ação de negação é adicionada pela identidade gerenciada da atribuição de blueprint e só pode ser removida dos recursos de artefato pela mesma identidade gerenciada. Essa medida de segurança impõe o mecanismo de bloqueio e impede a remoção do bloqueio do blueprint fora do Azure Blueprints. 
+
+**Importante**
+
+O Gerenciador de Recursos do Azure armazena em cache os detalhes da atribuição de função por até 30 minutos. Como resultado, a ação de negação das atribuições de negação nos recursos de blueprint pode não entrar imediatamente em vigor. Durante esse período, talvez seja possível excluir um recurso destinado a ser protegido por bloqueios de blueprint. 
+
+
+Excluir uma entidade de segurança de uma atribuição de negação
+Em alguns cenários de design ou segurança, pode ser necessário excluir uma entidade da atribuição de negação criada pela atribuição de blueprint. Essa etapa é feita na API REST adicionando até cinco valores à matriz excludedPrincipals na propriedade locks ao criar a atribuição. A definição de atribuição a seguir é um exemplo de um corpo de solicitação que inclui excludedPrincipals: 
+
+**{
+  "identity": {
+    "type": "SystemAssigned"
+  },
+  "location": "eastus",
+  "properties": {
+    "description": "enforce pre-defined simpleBlueprint to this XXXXXXXX subscription.",
+    "blueprintId": "/providers/Microsoft.Management/managementGroups/{mgId}/providers/Microsoft.Blueprint/blueprints/simpleBlueprint",
+    "locks": {
+        "mode": "AllResourcesDoNotDelete",
+        "excludedPrincipals": [
+            "7be2f100-3af5-4c15-bcb7-27ee43784a1f",
+            "38833b56-194d-420b-90ce-cff578296714"
+        ]
+    },
+    "parameters": {
+      "storageAccountType": {
+        "value": "Standard_LRS"
+      },
+      "costCenter": {
+        "value": "Contoso/Online/Shopping/Production"
+      },
+      "owners": {
+        "value": [
+          "johnDoe@contoso.com",
+          "johnsteam@contoso.com"
+        ]
+      }
+    },
+    "resourceGroups": {
+      "storageRG": {
+        "name": "defaultRG",
+        "location": "eastus"
+      }
+    }
+  }
+}**
+
+
+
+Excluir uma ação de uma atribuição de negação
+Semelhante à exclusão de uma entidade de segurança em uma atribuição de negação em uma atribuição de blueprint, você pode excluir operações específicas do provedor de recursos do Azure. No bloco properties.locks, no mesmo lugar em que excludedPrincipals está, um excludedActions pode ser adicionado: 
+
+**"locks": {
+    "mode": "AllResourcesDoNotDelete",
+    "excludedPrincipals": [
+        "7be2f100-3af5-4c15-bcb7-27ee43784a1f",
+        "38833b56-194d-420b-90ce-cff578296714"
+    ],
+    "excludedActions": [
+        "Microsoft.ContainerRegistry/registries/push/write",
+        "Microsoft.Authorization/*/read"
+    ]
+},**
+
+Embora excludedPrincipals deva ser explícito, as entradas de excludedActions podem fazer uso de * para correspondência curinga de operações do provedor de recursos. 
+
+
+**Microsoft Purview**
+
+O Microsoft Purview é um conjunto abrangente de soluções que podem ajudar sua organização a controlar, proteger e gerenciar dados, onde quer que eles estejam. As soluções do Microsoft Purview fornecem cobertura integrada e ajudam a resolver a fragmentação de dados entre organizações, a falta de visibilidade que dificulta a proteção e a governança de dados e a permeabilidade de funções tradicionais de gerenciamento de TI.
+
+O Microsoft Purview combina os antigos serviços e soluções do Azure Purview e de conformidade do Microsoft 365 em uma plataforma unificada para ajudar sua organização:
+
+Obtenha visibilidade de dados em toda a sua organização
+Proteja e gerencie dados confidenciais em todo o ciclo de vida, onde quer que eles estejam
+Governe os dados perfeitamente de maneiras novas e abrangentes
+Gerencie os riscos de dados críticos e requisitos regulatórios. 
+
+
+Segurança de dados, governança e conformidade juntos
+O Microsoft Purview fornece às organizações uma plataforma poderosa para controlar e proteger dados em todo o seu acervo de dados.
+
+Segurança de dados
+O Microsoft Purview fornece um conjunto robusto e coordenado de soluções de segurança de dados para ajudar você a descobrir e proteger informações confidenciais. As soluções incluem:
+
+Prevenção Contra Perda de Dados do Microsoft Purview
+Barreiras de Informações do Microsoft Purview
+Proteção de Informações do Microsoft Purview
+Gerenciamento de Risco Interno do Microsoft Purview
+Gerenciamento de Acesso Privilegiado do Microsoft Purview 
+
+
+**Governança de dados**
+
+**O Microsoft Purview** inclui soluções unificadas de governança de dados que ajudam você a gerenciar os serviços de dados na sua propriedade local, multinuvem e de software como serviço (SaaS). Isso inclui os serviços de armazenamento do Azure, o Power BI, bancos de dados como SQL ou Hive, serviços de arquivos como Amazon S3 e muitos mais. As soluções incluem:
+
+Catálogo de Dados do Microsoft Purview
+Insights do Estado de Dados do Microsoft Purview
+Mapa de Dados do Microsoft Purview
+Políticas de Dados do Microsoft Purview
+Compartilhamento de Dados do Microsoft Purview
+Juntas, essas ferramentas capacitam sua organização a: 
+
+
+Crie um mapa atualizado de toda a sua propriedade de dados que inclua a classificação de dados e a linhagem de ponta a ponta
+Identifique onde os dados confidenciais são armazenados na sua propriedade
+Crie um ambiente seguro para os consumidores de dados encontrarem dados valiosos
+Gere insights sobre como seus dados são armazenados e usados
+Gerencie o acesso aos dados em sua propriedade com segurança e em escala 
+
+
+**Risco e conformidade**
+
+O Microsoft Purview inclui soluções de risco e conformidade para ajudar sua organização a minimizar os riscos de conformidade e atender aos requisitos regulatórios. As soluções incluem:
+
+Auditoria do Microsoft Purview
+Conformidade de Comunicação do Microsoft Purview
+Gerenciador de Conformidade do Microsoft Purview
+Gerenciamento do Ciclo de Vida de Dados do Microsoft Purview
+Descoberta Eletrônica do Microsoft Purview 
+
+
+O novo portal do Microsoft Purview
+O novo portal Microsoft Purview foi projetado para tornar a proteção e o controle dos seus dados fáceis e eficientes. O novo portal possui um design atualizado que proporciona uma aparência e experiência consistentes, uma arquitetura de informações simplificada e uma navegação facilitada nas soluções do Microsoft Purview.
+
+O que há no novo portal? O portal do Microsoft Purview fornece acesso a soluções de governança de dados, segurança de dados e risco e conformidade. A seleção de soluções de risco e conformidade no portal atualmente abre essas soluções no portal de conformidade Microsoft Purview clássico. 
+
+
+**Portal de Confiança do Serviço Microsoft**
+
+**Microsoft Service Trust Portal**
+
+
+O  Microsoft Service Trust Portal fornece uma variedade de conteúdo, ferramentas e outros recursos sobre como os serviços de nuvem da Microsoft protegem seus dados e como você pode gerenciar a segurança e a conformidade de dados de nuvem para sua organização. 
+
+
+**Dica**
+
+Se você não for um cliente E5, use a avaliação de soluções do Microsoft Purview de 90 dias para explorar como recursos adicionais do Purview podem ajudar sua organização a gerenciar as necessidades de segurança e conformidade de dados. Comece agora no hub de avaliações portal de conformidade do Microsoft Purview. Saiba mais sobre os termos de inscrição e avaliação. 
+
+Acessando o Portal de Confiança do Serviço
+O Portal de Confiança do Serviço é o site público da Microsoft para publicar relatórios de auditoria e outras informações relacionadas à conformidade associadas aos serviços de nuvem da Microsoft. Os usuários de STP podem baixar relatórios de auditoria produzidos por auditores externos e obter informações de whitepapers de autoria da Microsoft que fornecem detalhes sobre como os serviços de nuvem da Microsoft protegem seus dados e como você pode gerenciar a segurança e a conformidade dos dados de nuvem para sua organização. Para acessar alguns dos recursos no Portal de Confiança do Serviço, você deve fazer logon como um usuário autenticado com sua conta de serviços de nuvem da Microsoft (Microsoft Entra conta da organização) e examinar e aceitar o Contrato de Não Divulgação da Microsoft para Materiais de Conformidade.
+
+
+**Clientes existentes**
+
+Os clientes existentes podem acessar o Portal https://aka.ms/STP de Confiança do Serviço com uma das seguintes assinaturas online (avaliação ou pagamento):
+
+Microsoft 365
+Dynamics 365
+Azure 
+
+
+**Observação**
+
+Microsoft Entra contas associadas às organizações têm acesso à gama completa de documentos e recursos, como o Gerenciador de Conformidade. 
+
+
+Novos clientes e clientes que avaliam a Microsoft serviços online
+Para criar uma nova conta ou criar uma conta de avaliação, use um dos seguintes formulários de inscrição (também usados para contas de avaliação) para obter acesso ao STP.
+
+Inscrever-se para uma nova conta de avaliação Microsoft 365 Apps para Pequenos e Médios negócios ou uma nova conta de avaliação Office 365 Enterprise
+
+Inscrever-se para uma nova conta de avaliação Dynamics 365
+
+Inscreva-se para uma nova conta de avaliação do Azure.
+
+Ao se inscrever para uma avaliação gratuita ou uma assinatura, você deve habilitar Microsoft Entra ID para dar suporte ao seu acesso ao STP. 
+
+
+Usando o Portal de Confiança do Serviço
+Os recursos e conteúdo do Portal de Confiança do Serviço podem ser acessados no menu principal. As seções a seguir descrevem cada item no menu main. 
+
+Portal de Confiança do Serviço
+O link Portal de Confiança do Serviço exibe a página inicial. Ele fornece uma maneira rápida de voltar à home page.
+
+Certificações, regulamentos e padrões
+Fornece uma riqueza de informações de implementação e design de segurança com o objetivo de facilitar o cumprimento dos objetivos de conformidade regulatória entendendo como os serviços da Microsoft Cloud mantêm seus dados seguros. Para examinar o conteúdo, selecione um dos blocos a seguir.
+
+ISO/IEC - Organização Internacional para Padronização (ISO) / Comissão Eletrotécnica Internacional (IEC)
+SOC – Controles de Sistema e Organização (SOC) 1, 2 e 3 Relatórios
+GDPR – Regulamento Geral de Proteção de Dados
+FedRAMP – Programa Federal de Gerenciamento de Riscos e Autorização
+PCI – PCI (Payment Card Security Standards) (DSS)
+CSA Star – CSA (Cloud Security Alliance) Registro de Segurança, Confiança e Garantia (STAR)
+Australia IRAP - Australia Information Security Registered Assessors Program (IRAP)
+Singapore MTCS - MTCS (Multi-Tier Cloud Security) Singapore Standard
+Espanha ENS - Espanha Esquema Nacional de Seguridad (ENS)
+Relatórios, whitepapers e artefatos
+Documentos gerais relacionados às seguintes categorias:
+
+Recursos de IA: recursos que descrevem a abordagem de Conformidade, Segurança e Privacidade nas soluções de IA, como Microsoft Copilot e IA aberta do Azure.
+BCP e DR: Continuidade de negócios e recuperação de desastres.
+Avaliações de teste e segurança de caneta: atestado de testes de penetração e avaliações de segurança realizados por terceiros.
+Privacidade e Proteção de Dados: recursos de privacidade e proteção de dados.
+Perguntas frequentes e whitepapers: whitepapers e respostas para perguntas frequentes. 
+
+Recursos industriais e regionais
+Documenta o aplicável às seguintes indústrias e regiões:
+
+Serviços Financeiros – Recursos que elaboram diretrizes de conformidade regulatória para FSI (por país/região)
+Saúde e Ciências da Vida – Funcionalidades oferecidas pela Microsoft para o setor de saúde
+Mídia e Entretenimento – Recursos da Indústria de Mídia e Entretenimento
+Estados Unidos Governo – Recursos exclusivamente para clientes do governo dos EUA
+Recursos Regionais – Documentos que descrevem a conformidade do serviços online da Microsoft com várias políticas e regulamentos regionais
+Recursos para sua organização
+Documentos que se aplicam à sua organização (restritos por locatário).
+
+Recursos para sua Organização – Documentos com base na assinatura e permissões da sua organização
+Recursos com a série marcar marca indicam que o documento tem várias versões, que podem ser exibidas depois de clicar no documento e clicar em "exibir todas as versões" na página de download. 
+
+Filtrar por data e serviço de nuvem – Ao exibir os documentos disponíveis, você pode filtrar os resultados por intervalo de datas selecionando Datas e selecionando o intervalo que deseja usar.
+
+
+**Documentos restritos**
+
+O Portal de Confiança do Serviço tem documentos que, dada a natureza de seu conteúdo, estão disponíveis para usuários com permissões específicas. Você precisa receber uma das seguintes funções para exibir documentos restritos:
+
+Administração de locatário
+Administrador de Conformidade
+Administrador de Segurança
+Leitor de Segurança
 
 
 
