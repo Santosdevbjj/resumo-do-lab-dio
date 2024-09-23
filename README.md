@@ -849,7 +849,6 @@ Outra opção de alta disponibilidade é configurar um gateway de VPN como um ca
 O Azure ExpressRoute permite que você estenda suas redes locais para a nuvem da Microsoft em uma conexão privada com a ajuda de um provedor de conectividade. Essa conexão é chamada de Circuito do ExpressRoute. Com o ExpressRoute, você pode estabelecer conexões com os serviços em nuvem da Microsoft, como o Microsoft Azure e o Microsoft 365. Esse recurso permite que você conecte escritórios, datacenters ou outras instalações à nuvem da Microsoft. Cada local teria o próprio circuito do ExpressRoute. 
 
 
-
 **Recursos e benefícios do ExpressRoute**
 
 Há vários benefícios de usar o ExpressRoute como o serviço de conexão entre o Azure e as redes locais.
@@ -1548,7 +1547,448 @@ Para quem é ideal?
  * Desenvolvedores: Para proteger aplicativos e serviços.
  * Administradores de TI: Para simplificar a gestão de usuários e permissões.
 Em resumo:
-O Microsoft Entra ID é uma solução completa e poderosa para gerenciar identidades e controlar o acesso aos seus recursos na nuvem. Se você busca uma forma segura, eficiente e flexível de gerenciar as identidades da sua organização, o Microsoft Entra ID é a escolha certa.
+**O Microsoft Entra ID** é uma solução completa e poderosa para gerenciar identidades e controlar o acesso aos seus recursos na nuvem. Se você busca uma forma segura, eficiente e flexível de gerenciar as identidades da sua organização, o Microsoft Entra ID é a escolha certa.
+
+
+**Estimar os custos com a Calculadora de Preços do Azure**
+
+![Screenshot_20240922-203501](https://github.com/user-attachments/assets/d7aa0ca7-639b-4b7d-8540-550fbc89ad6e)
+
+
+A calculadora de preços do Azure ajuda você a transformar o uso antecipado em um custo estimado, o que facilita o planejamento e o orçamento do uso do seu Azure. Quer você seja proprietário de uma pequena empresa ou de uma organização de nível empresarial, a ferramenta baseada na Web ajuda você a tomar decisões informadas sobre seus gastos com a nuvem. Ao fazer o logon, a calculadora também fornece uma estimativa de custo do seu consumo do Azure com seus preços negociados ou com desconto. Este artigo explica como utilizar a calculadora de preços do Azure. 
+
+Observação
+
+Você também pode usar a Calculadora de TCO (Custo Total de Propriedade) do Azure para estimar a economia de custos que você pode obter migrando suas cargas de trabalho de aplicativo para o Microsoft Azure.
+Os preços mostrados neste artigo são exemplos para ajudar você a entender como a calculadora funciona. Esses não são preços reais. 
+
+Acessar a calculadora de preços do Azure
+Existem duas maneiras de navegar até a calculadora:
+
+**Acesse https://azure.microsoft.com/pricing/calculator/
+-Ou-**
+
+**Acesse o site do Azure e selecione o link da calculadora de preços em Preço no menu de navegação.**
+
+Entenda a calculadora de preços do Azure
+Vamos examinar as três principais seções da página da calculadora de preços:
+
+O seletor de produtos: mostra todos os serviços do Azure para os quais a calculadora pode estimar os custos. Nessa seção, existe uma caixa de pesquisa, categorias de serviços do Azure e cartões de produtos. 
+
+Existem outras guias ao lado da guia Produtos que abordaremos mais adiante. Existe também um link Logon para se autenticar para várias funções e recursos que abordaremos mais tarde.
+
+Estimativa e configuração do produto: a calculadora de preços ajuda você a criar estimativas, que são coleções de produtos do Azure, semelhantes a um carrinho de compras.
+
+Até que os produtos sejam adicionados à sua estimativa, ela aparecerá em branco. Veja um exemplo. 
+
+
+Ao adicionar um produto à sua estimativa, as seguintes seções são adicionadas à sua estimativa:
+
+As ferramentas de estimativa estão na parte superior da estimativa.
+A configuração do produto está nas ferramentas de estimativa.
+Resumo da estimativa: o resumo da estimativa é mostrado abaixo da configuração do produto. 
+
+À medida que você continua a adicionar mais serviços à sua estimativa, mais seções de configuração do produto são adicionadas, uma por serviço.
+
+Abaixo da sua estimativa, encontram-se alguns links para as próximas etapas. Existe também um link de comentários para ajudar a melhorar a experiência da calculadora de preços do Azure. 
+
+Criar uma estimativa
+Como é sua primeira vez, você começa com uma estimativa vazia.
+
+Utilize o seletor de produtos para encontrar um produto. Você pode navegar pelo catálogo ou pesquisar o nome do serviço do Azure.
+Selecione o bloco do produto para adicioná-lo à estimativa. Ele adiciona o produto com uma configuração padrão.
+A aparição rápida das configurações mostra filtros de alto nível, como região, tipo de produto, camadas e assim por diante. Utilize os filtros para restringir sua seleção de produtos. As configurações oferecidas são alteradas para refletir os recursos oferecidos pelo subproduto selecionado.
+Atualize as configurações padrão para mostrar seu consumo mensal esperado. As estimativas são atualizadas automaticamente para a nova configuração. Por exemplo, uma configuração de máquina virtual tem como padrão a execução por um mês (730 horas). Alterar a configuração para 200 horas atualiza automaticamente a estimativa.
+Alguns produtos oferecem planos de preços especiais, como instâncias reservadas ou planos de economia. Você pode escolher essas opções, se disponíveis, para reduzir seus custos.
+Dependendo do produto ou do plano de preços selecionado, a estimativa é dividida em custos iniciais e mensais.
+Os custos iniciais são incorridos antes de o produto ser consumido.
+Os custos mensais são incorridos após o consumo do produto.
+Embora seja opcional, recomendamos que você dê um nome exclusivo à configuração. É mais fácil encontrar uma configuração específica em uma estimativa grande quando ela tem um nome exclusivo.
+Repita as etapas para adicionar mais produtos a uma estimativa.
+Por fim, não se esqueça de adicionar um plano de suporte. Escolha entre as opções Básico, Desenvolvedor, Standard ou Professional Direct. 
+
+Utilize os recursos avançados da calculadora
+Aqui está um exemplo com descrições detalhadas de todos os elementos e opções em uma estimativa. 
+
+Compreender os dados da calculadora
+Essa seção fornece mais informações sobre a origem dos preços, como os cálculos funcionam e fontes alternativas para os preços na calculadora.
+
+As informações de preço por unidade exibidas na Calculadora de Preços do Azure são originadas de dados fornecidos pela API de Preços de Varejo do Azure.
+
+A Calculadora de Preços do Azure considera vários fatores para fornecer uma estimativa de custo. Veja como ela funciona:
+
+Configuração do Produto: a calculadora efetua pull do preço por unidade para cada produto da API de preços de varejo do Azure com base nos diferentes parâmetros do produto selecionados pelo usuário, como: região, tamanho, sistema operacional, nível e outros recursos específicos.
+Estimativa de Consumo: a calculadora vai além e utiliza as quantidades de uso inseridas pelo usuário, como horas, unidades e outras, para estimar o consumo e calcular os custos estimados.
+Planos de Preços: você pode selecionar entre diferentes planos de preços e opções de economia para cada produto. Eles incluem pré-pago, instâncias reservadas por um ou três anos e planos de economia para taxas com desconto. A seleção de um plano de preços diferente resulta em preços diferentes.
+Se precisar acessar informações de preços de forma programática ou exigir dados de preços mais detalhados, você pode utilizar a API de Preços de Varejo do Azure. A API fornece informações abrangentes sobre preços de varejo para todos os serviços do Azure em diferentes regiões e moedas. Para obter mais informações, consulte API de Preços de Varejo do Azure. 
+
+
+Exiba uma estimativa com os preços do seu contrato
+A calculadora ajuda você a entender os custos de varejo dos seus serviços do Azure, mas também pode mostrar quaisquer taxas negociadas específicas da sua Conta de Cobrança do Azure. Mostrar seus preços negociados ajuda você a obter uma representação mais precisa dos custos esperados.
+
+Na parte inferior da estimativa da calculadora, observe o item da lista intitulado Programa de licenciamento. 
+
+Depois de fazer o logon (não entrar pela parte superior da página que o leva ao portal do Microsoft Azure), selecione o item da lista Programa de Licenciamento para ver as seguintes opções:
+
+MCA (Contrato de Cliente da Microsoft)
+Enterprise Agreement (EA)
+Novo Provedor de Soluções na Nuvem (CSP) para o Comércio
+Contrato de Serviço Online da Microsoft (MOSA)
+Se você tiver negociado preços associados a uma conta de cobrança do MCA:
+
+Selecione a opção Contrato de Cliente da Microsoft (MCA) no programa de licenciamento.
+Selecione Nenhum selecionado (alterar).
+Captura de tela mostrando a opção Nenhum selecionado (alterar).
+Selecione uma conta de cobrança e selecione Aplicar. 
+
+A estimativa da calculadora é atualizada com as informações da planilha de preços do MCA.
+
+Se você tiver negociado preços associados a uma conta de cobrança do EA:
+
+Selecione a opção Enterprise Agreement (EA) na lista de programas de licenciamento.
+Captura de tela mostrando o item da lista do Enterprise Agreement (EA).
+Na área Escolher contrato, selecione a inscrição ou a ID da conta de cobrança e, em seguida, selecione Aplicar. 
+
+
+A estimativa da calculadora é atualizada com as informações da planilha de preços do EA.
+
+Se você deseja alterar o registro selecionado, selecione o link Contrato selecionado à direita do item da lista de programas de licenciamento. Veja um exemplo. 
+
+Se você for um parceiro do Provedor de Soluções na Nuvem (CSP) que fez a transição para a nova experiência de comércio, poderá exibir sua estimativa selecionando a opção Contrato de Cliente da Microsoft (MCA) no programa de licenciamento. 
+
+Observação
+
+A estimativa de Crédito Ganho pelo Parceiro (PEC) não está disponível na calculadora, portanto, você precisa aplicar manualmente seu PEC antecipado à estimativa mensal. 
+
+Se não tiver acesso para fazer o logon na calculadora e ver os preços negociados, entre em contato com o administrador ou o Gerente de Conta do Azure. 
+
+
+Azure Marketplace
+O Azure Marketplace destina-se a soluções desenvolvidas para o Azure ou nele para desenvolvedores e profissionais de TI. Essa loja inclui as listagens de serviços gerenciados e de consultoria. Os serviços de consultoria do Azure Marketplace são ofertas de serviços profissionais que ajudam os clientes a começar a usar o Azure ou a aprender a usá-lo mais rápido. 
+
+Azure Marketplace no portal do Azure
+
+Os clientes do Azure podem descobrir e implantar soluções do Azure Marketplace por meio da opção Criar um recurso no portal do Azure.
+
+Qual loja devo escolher?
+
+
+Quando você cria uma oferta do marketplace comercial no Partner Center, ela pode ser listada em qualquer loja com base no tipo de oferta, nas categorias e em outras opções selecionadas. No caso raro de a oferta ser relevante para os usuários de ambas as lojas online, ela pode aparecer nas duas. Para saber mais, confira Opções de listagem e preços pela loja online. 
+
+
+
+**Introdução ao marketplace comercial da Microsoft**
+
+**O que é o marketplace comercial?**
+
+![Screenshot_20240922-205033](https://github.com/user-attachments/assets/a7335895-e7fb-4d30-8de4-3a9519f03b60)
+
+
+Após uma sessão estratégica com a liderança executiva da sua empresa, você começará a reunir informações detalhadas sobre o marketplace comercial. Você descobre que o marketplace comercial funciona como um marketplace sob demanda, centrado na nuvem, capacitando os parceiros da Microsoft a apresentarem suas soluções inovadoras no extenso catálogo de produtos online da Microsoft. A iniciativa do marketplace comercial foi projetada para simplificar o processo de levar soluções de parceiros para um público-alvo global, facilitando o acesso e a distribuição contínuos. 
+
+
+
+Projetado para clientes
+
+
+O marketplace comercial é uma plataforma robusta que permite que os clientes existentes e potenciais descubram, avaliem, comprem e implantem as melhores soluções de nuvem da categoria. Essas soluções de nuvem são fundamentais para impulsionar a transformação digital e promover a inovação no ecossistema de nuvem da Microsoft. Para aqueles que já fazem parte do ecossistema de nuvem, o marketplace comercial oferece aos clientes um benefício adicional: a capacidade de integrar suas compras no marketplace com contratos de aquisição existentes da Microsoft, simplificando a cobrança por meio de uma fatura unificada diretamente da Microsoft. 
+
+Criado para parceiros
+
+Ingressar no marketplace comercial é totalmente gratuito. O marketplace comercial serve como um canal ágil de vendas e marketing para suas soluções e serviços de nuvem, concedendo-lhe acesso a mercados inexplorados, a segmentos diversos de clientes e a uma vasta base de usuários dentro do ecossistema de nuvem da Microsoft. Você pode utilizar o marketplace comercial não apenas como uma plataforma para mostrar suas soluções e serviços para seus clientes, mas também como um recurso para descobrir e criar soluções exemplares que podem ser integradas perfeitamente à infraestrutura de nuvem da sua própria organização. 
+
+Pontos de acesso múltiplos
+
+O marketplace comercial da Microsoft oferece duas lojas online distintas: Microsoft AppSource e Azure Marketplace. As duas vitrines atendem a diversas funções de comprador nas organizações dos clientes.
+
+
+
+Listar suas soluções no marketplace comercial as torna acessíveis por meio de:
+
+
+Microsoft AppSource: direcionamento de usuários empresariais que buscam soluções especializadas do setor.
+
+Azure Marketplace: ideal para profissionais de TI e engenheiros de nuvem que procuram infraestrutura de nuvem e serviços de bloco de construção.
+
+Além disso, suas soluções também podem ganhar visibilidade por meio de:
+
+
+Rede de Revendedores da Microsoft: expanção do alcance por meio de uma vasta rede de revendedores.
+
+Integrações no produto: integração perfeita com o Microsoft 365, Dynamics 365, Power Platform e Azure, fornecendo aos clientes opções diretas de descoberta e implantação no produto.
+
+
+Essa abordagem multifacetada garante que suas soluções sejam detectáveis pelo público-alvo certo, no momento certo, dentro do ecossistema de nuvem da Microsoft.
+
+Alcance expansivo
+
+O marketplace comercial, que abrange as duas lojas online e as experiências nos produtos, atrai milhões de usuários ativos mensalmente. Cada usuário é uma oportunidade única, um cliente potencial para suas ofertas. Dada a adopção global de produtos e serviços da Microsoft em todas as organizações, estes usuário ativos refletem um espectro diversificado de clientes potenciais, desde pequenas empresas a grandes empresas, abrangendo todos os setores. Essa ampla base de usuários ressalta o potencial do marketplace comercial como um canal poderoso para ampliar o alcance e o crescimento da sua empresa. 
+
+
+Desbloquear oportunidades
+
+A perspectiva de apresentar seus produtos para um vasto público-alvo global alinha-se perfeitamente com a diretriz de sua equipe executiva. No entanto, para aproveitar essa oportunidade, é essencial uma compreensão mais profunda das lojas online. As soluções da sua empresa, adaptadas para diversos grupos de clientes, devem encontrar seu nicho apropriado no marketplace comercial.
+
+
+Para identificar a loja online mais adequada para suas soluções – seja o Microsoft AppSource para aplicativos de negócios ou o Azure Marketplace para serviços de TI – deverá se aprofundar na documentação do marketplace comercial. Isso fornece clareza sobre como posicionar suas ofertas efetivamente nesse ecossistema expansivo.
+
+
+Planejar o gerenciamento de custos do Azure 
+
+Você vai aprender a planejar o gerenciamento de custos do Azure. Ao se inscrever no Azure, há várias coisas que podem ser feitas para você ter uma ideia melhor de seus gastos:
+
+Obtenha os custos estimados antes de adicionar serviços usando a Calculadora de Preços, a tabela de preços do Azure ou durante a adição de serviços no portal do Azure.
+Monitore os custos com orçamentos, alertas e análise de custo.
+Examine os encargos em sua fatura comparando-os com arquivos de uso detalhado.
+Integre os dados de cobrança e custo ao seu próprio sistema de relatórios usando APIs de cobrança e consumo.
+Use recursos e ferramentas adicionais para clientes do EA (Contrato Enterprise), do CSP (Provedor de Soluções na Nuvem) e do Azure Sponsorship.
+Use alguns dos serviços mais populares do Azure gratuitamente por 12 meses disponíveis com a conta gratuita do Azure. Juntamente com as recomendações listadas abaixo, consulte Evitar ser cobrado na conta gratuita.
+Se você precisar cancelar sua assinatura do Azure, confira Cancelar sua assinatura do Azure. 
+
+Obter custos estimados antes de adicionar serviços do Azure
+Use uma das seguintes ferramentas para estimar o custo do uso de um serviço do Azure:
+
+Calculadora de preços do Azure
+Tabela de preços do Azure
+Portal do Azure
+As imagens nas seções a seguir mostram os preços de exemplo em dólares americanos. Os preços mencionados são apenas para exemplificar. Eles não se destinam a implicar os custos reais. 
+
+Estimar custo online usando a calculadora de preços
+Confira a Calculadora de Preços para obter uma estimativa do custo mensal do serviço que deseja adicionar. Altere a moeda para obter a estimativa em sua moeda local.
+
+Exiba o custo estimado de qualquer serviço interno do Azure. Por exemplo, na captura de tela abaixo, o custo de uma VM (Máquina Virtual) do Windows A1 é estimado como US$ 66,96 por mês em horas de computação se você deixá-la em execução o tempo todo: 
+
+Os preços mencionados são apenas para exemplificar. Eles não se destinam a implicar os custos reais.
+
+Para obter mais informações sobre preços, confira as Perguntas frequentes sobre Preços. Se desejar conversar com um vendedor do Azure, ligue para o número de telefone mostrado na parte superior da página de Perguntas frequentes. 
+
+Examinar preços
+Caso tenha acesso ao Azure por meio de um EA (Contrato Enterprise) ou um MCA (Contrato de Cliente da Microsoft), você poderá exibir e baixar a tabela de preços de sua conta do Azure. A tabela de preços é um arquivo do Excel que contém os preços de todos os serviços do Azure. Para obter mais informações, confira Exibir e baixar os preços do Azure.
+
+Para outros tipos de assinatura, você pode obter preços de varejo padrão com a API de Preços de Varejo do Azure. 
+
+
+Examinar os custos estimados no portal do Azure
+Exiba o custo estimado por mês durante a adição de um serviço no portal do Azure. Por exemplo, quando você escolhe o tamanho de sua VM do Windows, vê o custo mensal estimado para as horas de computação: 
+
+Os preços mencionados são apenas para exemplificar. Eles não se destinam a implicar os custos reais.
+
+Monitorar custos ao usar os serviços do Azure
+É possível monitorar custos com as seguintes ferramentas:
+
+Orçamento e alertas de custo
+Análise de custo 
+
+Acompanhar os custos com orçamentos e alertas de custo
+Crie orçamentos para gerenciar custos e crie alertas que notificam você e os stakeholders automaticamente de anomalias de gastos e gastos em excesso.
+
+Explorar e analisar os custos com a análise de custo
+Depois que os serviços do Azure estiverem em execução, verifique os custos regularmente para acompanhar seus gastos do Azure. Use a análise de custo para entender a procedência dos custos para o uso do Azure.
+
+Visite a página Gerenciamento de Custos + Cobrança no portal do Azure.
+
+Selecione Análise de custo no lado esquerdo da tela para ver o custo atual dividido por vários pivôs, como serviço, localização e assinatura. Depois de adicionar um serviço ou fazer uma compra, aguarde 24 horas para que os dados sejam exibidos. Por padrão, a análise de custo mostra o custo do escopo em que você está. Por exemplo, na captura de tela abaixo, o custo da conta de cobrança da Contoso é exibido. Use o item Escopo para alterar para outro escopo na análise de custo. Para obter mais informações sobre escopos, confira Entender e trabalhar com escopos 
+Filtre por várias propriedades, como marcas, tipo de recurso e período de tempo. Selecione Adicionar filtro para adicionar o filtro de uma propriedade e selecione os valores a serem filtrados. Selecione Exportar para exportar a exibição para um arquivo de valores separados por vírgula (.csv).
+
+Além disso, selecione os rótulos do gráfico para ver o histórico de gastos diário para esse rótulo. Por exemplo, na captura de tela abaixo, a seleção de uma máquina virtual exibe o custo diário de executar suas VMs. 
+
+Otimizar e reduzir custos
+Se você não estiver familiarizado com os princípios de gerenciamento de custos, leia Como otimizar seu investimento em nuvem com o Gerenciamento de Custos.
+
+No portal do Azure, também é possível otimizar e reduzir custos do Azure com desligamento automático para VMs e recomendações do Assistente.
+
+Considere recursos de redução de custos, como o desligamento automático para VMs
+Dependendo do cenário, você pode configurar o desligamento automático para suas VMs no portal do Azure. Para saber mais, confira Desligamento automático de máquinas virtuais usando o Azure Resource Manager. 
+
+O desligamento automático não é igual a desligar a VM com as opções de energia padrão. O desligamento automático interrompe e desaloca suas VMs para parar as cobranças adicionais. Para saber mais, confira os estados de VM nas Perguntas frequentes sobre preços de VMs Linux e VMs Windows.
+
+Para obter mais recursos de redução de custos para os ambientes de desenvolvimento e teste, confira Azure DevTest Labs.
+
+Ativar e examinar recomendações do Assistente do Azure
+O Assistente do Azure ajuda a reduzir os custos identificando recursos com baixa utilização. Pesquise Assistente no portal do Azure: 
+
+Selecione Custo no lado esquerdo. Você verá recomendações práticas na guia Custo: 
+
+Os preços mencionados são apenas para exemplificar. Eles não se destinam a implicar os custos reais.
+
+Examine o tutorial Otimizar custos de recomendações para obter um tutorial guiado sobre recomendações do Assistente para economia de custos. 
+
+Evite encargos indesejados
+Para evitar encargos indesejados em uma assinatura, você pode acessar o menu Recursos da assinatura e selecionar os recursos que deseja excluir. Se não quiser ter nenhum encargo para a assinatura, selecione todos os recursos de assinatura e, em seguida, Exclua-os . Essencialmente, a assinatura se torna um contêiner vazio sem encargos. 
+
+Se você tiver um plano de suporte, poderá continuar a ser cobrado por ele. Para excluir um plano de suporte, navegue até Gerenciamento de Custos + Cobrança e selecione Encargos recorrentes. Selecione o plano de suporte e desative a renovação automática. 
+
+
+Integrar com APIs de gerenciamento de custos e cobrança
+Use as APIs de automação cobrança e Gerenciamento de Custos do Azure para obter dados de cobrança e custo de forma programática. Use a API RateCard junto com a API de Uso para obter seu uso cobrado.
+
+Casos especiais e recursos adicionais
+Clientes do CSP e do Sponsorship
+Fale com seu gerente de conta ou parceiro do Azure para começar. 
+
+Se estiver gerenciando TI em uma grande organização, recomendamos a leitura de Azure enterprise scaffold e enterprise IT white paper (baixe o .pdf, somente em inglês).
+
+Visualizações de custo do Contrato Enterprise no portal do Azure
+As visualizações de custo Enterprise estão, no momento, em Visualização Pública. Itens a serem observados:
+
+Os custos de assinatura são baseados no uso e não incluem valores pré-pagos, excedentes, quantidades incluídas, ajustes e impostos. Os encargos reais são calculados no nível de registro.
+Se você não está vendo os custos, isso pode ser por um dos seguintes motivos:
+Você não tem permissões no nível da assinatura. Para ver as exibições de custo empresarial, você precisa ser um Leitor de Cobrança, Leitor, Colaborador ou Proprietário no nível da assinatura.
+Você é um Proprietário de Conta e seu Administrador de registro desabilitou a configuração “Encargos de exibição do AO”. Contate o Administrador de registro para obter acesso aos custos.
+Você é um administrador de departamento e seu administrador de registro desabilitou a configuração Encargos de exibição do DA. Entre em contato com o Administrador de registro para obter acesso.
+Você comprou o Azure por meio de um parceiro de canal e o parceiro não liberou informações sobre preços.
+Os clientes diretos do EA podem atualizar as configurações relacionadas a custos no portal do Microsoft Azure. Navegue até o menu Políticas para alterar as configurações.
+Limite de gastos e diretrizes de fatura não se aplicam às assinaturas do Contrato Enterprise.
+Verificar assinatura e acesso
+Para exibir os custos, você precisa ter acesso no nível de conta ou de assinatura às informações de custo ou de cobrança. O acesso varia de acordo com o tipo de conta de cobrança. Para saber mais sobre contas de cobrança e verificar o tipo de sua conta de cobrança, confira Exibir contas de cobrança no portal do Azure.
+
+Caso tenha acesso ao Azure por meio de uma conta de cobrança do MOSP (Programa do Microsoft Online Services), confira Gerenciar o acesso às informações de cobrança para o Azure.
+
+Caso tenha acesso ao Azure por meio de uma conta de cobrança do EA (Contrato Enterprise), confira Entender as funções administrativas do Contrato Enterprise do Azure no Azure.
+
+Caso tenha acesso ao Azure por meio de uma conta de cobrança do MCA (Contrato de Cliente da Microsoft), confira Entender as funções administrativas do Contrato de Cliente da Microsoft no Azure. 
+
+Solicitar um crédito do Contrato de Nível de Serviço para um incidente de serviço
+O SLA (Contrato de Nível de Serviço) descreve os compromissos da Microsoft com relação ao tempo de atividade e à conectividade. Um incidente de serviço é relatado quando os serviços do Azure enfrentam um problema que afeta o tempo de atividade ou a conectividade, geralmente denominado interrupção. Se não alcançarmos e mantivermos os Níveis de Serviço para cada serviço, conforme descrito no SLA, você poderá ser qualificado para um crédito para uma parte de seus valores de serviço mensais.
+
+Para solicitar um crédito:
+
+Entre no portal do Azure. Se você tiver várias contas, use a que foi afetada pelo tempo de inatividade do Azure. Em seguida, crie uma solicitação de suporte.
+
+Em Tipo de problema, selecione Cobrança e, em Tipo de problema, selecione Solicitação de Reembolso.
+
+Adicione detalhes para especificar que você está solicitando um crédito SLA, mencione a data/hora/fuso horário, além dos serviços afetados (VMs, sites etc.)
+
+Por fim, verifique seus detalhes de contato e selecione Criar para enviar sua solicitação.
+
+Para alguns serviços, há pré-requisitos para o SLA aplicar. Por exemplo, as máquinas virtuais devem ter duas ou mais instâncias implantadas no mesmo conjunto de disponibilidade.
+
+Para obter mais informações, confira Contratos de Nível de Serviço e a documentação Resumo do SLA para serviços do Azure. 
+
+Use marcas para organizar os recursos do Azure e a hierarquia de gerenciamento
+
+Marcas são elementos de metadados que você aplica aos recursos do Azure. Elas são pares chave-valor que ajudam você a identificar recursos com base em configurações relevantes para sua organização. Se você quiser rastrear o ambiente de implantação para seus recursos, adicione uma chave chamada Environment. Para identificar os recursos implantados na produção, atribua a eles um valor de Production. O par chave-valor total é Environment = Production. 
+
+
+Uso e recomendações de marca
+Você pode aplicar marcas aos seus recursos do Azure, grupos de recursos e assinaturas, mas não aos grupos de gerenciamento.
+
+Para obter recomendações sobre como implementar uma estratégia de marcação, consulte Guia de decisão de nomenclatura e marcação de recursos.
+
+As marcações de recurso dão suporte a todos os serviços de acúmulo de custos. Para garantir que os serviços geradores de custos sejam provisionados com uma marca, use uma das políticas de marca. 
+
+Aviso
+
+As marcações são armazenadas como texto sem formatação. Jamais adicione valores confidenciais às marcações. Valores confidenciais podem ser expostos por meio de muitos métodos, incluindo relatórios de custo, comandos que retornam as definições de marca existentes, históricos de implantação, modelos exportados e logs de monitoramento. 
+
+
+Aviso
+
+Tenha cuidado ao usar um idioma que não seja o inglês nas marcas. Isso poderá causar uma falha no progresso da decodificação ao carregar os metadados da VM do IMDS (Serviço de Metadados de Instância). 
+
+Importante
+
+Os nomes de marca não diferenciam maiúsculas de minúsculas para operações. Uma marca com um nome de marca, independentemente de maiúsculas e minúsculas, será atualizada ou recuperada. No entanto, o provedor de recursos pode manter a capitalização fornecida por você para o nome da marca. Essa capitalização será exibida nos relatórios de custo.
+
+Os valores da marca diferenciam maiúsculas de minúsculas. 
+
+Acesso necessário
+Há duas maneiras de obter o acesso necessário aos recursos de marcação.
+
+É possível ter acesso de gravação ao tipo de recurso Microsoft.Resources/tags. Esse acesso permite marcar qualquer recurso, mesmo que você não tenha acesso ao recurso em si. A função de Colaborador de marcação concede esse acesso. Por exemplo, a função de colaborador de marcação não pode aplicar marcas a recursos ou grupos de recursos por meio do Portal. Ela pode, no entanto, aplicar marcas às assinaturas por meio do Portal. Ele dá suporte a todas as operações de marcação por meio do Azure PowerShell e da API REST.
+
+É possível ter acesso de gravação ao recurso em si. A função Colaborador concede o acesso necessário para aplicar marcas a qualquer entidade. Para aplicar marcas a apenas um tipo de recurso, use a função de colaborador para esse recurso. Para aplicar marcas a máquinas virtuais, por exemplo, use o Colaborador da Máquina Virtual.
+
+Herdar marcas
+Os recursos não herdam as marcas que você aplica a um grupo de recursos ou a uma assinatura. Para aplicar marcas de uma assinatura ou grupo de recursos aos recursos, consulte Políticas do Azure – marcas.
+
+Você pode agrupar os custos de um recurso do Azure usando a marca cm-resource-parent. Essa marca permite que você examine os custos marcados no Gerenciamento de Custos da Microsoft sem precisar usar filtros. A chave para essa marca é cm-resource-parent e seu valor é a ID do recurso do Azure pelo qual você deseja agrupar os custos. Por exemplo, para agrupar custos por um pool de host da Área de Trabalho Virtual do Azure, forneça a ID do recurso do pool de host. Para obter mais informações, confira Agrupar recursos relacionados na análise de custo. 
+
+Marcas e cobrança
+Você pode usar marcas para agrupar os dados de cobrança. Se estiver executando várias VMs para organizações diferentes, por exemplo, use marcas para agrupar o uso por centro de custo. Você também pode usar marcas para categorizar os custos pelo ambiente de runtime, como por exemplo, o uso de cobrança para VMs em execução no ambiente de produção.
+
+É possível recuperar informações sobre marcas baixando o arquivo de uso disponível no portal do Azure. Para saber mais, confira Baixar ou exibir sua fatura de cobrança e dados de uso diário do Azure. Para os serviços que dão suporte a marcas com cobrança, as marcas aparecerão na coluna Marcas.
+
+Para operações de API REST, confira Referência da API REST de cobrança do Azure. 
+
+
+Paginação de tags exclusivas
+Ao chamar a API de tags exclusivas, há um limite para o tamanho de cada página de resposta da API retornada. Uma tag que possui um grande conjunto de valores exclusivos exigirá que a API busque a próxima página para recuperar o conjunto restante de valores. Quando isso acontece a chave tag é mostrada novamente para indicar que os valores ainda estão sob esta chave.
+
+Isso pode fazer com que algumas ferramentas, como o portal do Azure, mostrem a chave da etiqueta duas vezes.
+
+Limitações
+As seguintes limitações se aplicam a marcas:
+
+Nem todos os tipos de recursos suportam tags. Para determinar se você pode aplicar uma tag a um tipo de recurso, consulte Suporte a tags para recursos do Azure.
+
+Cada recurso, grupo de recursos ou assinatura pode ter um máximo de 50 pares de nome/valor de marca. Se precisar aplicar mais marcas do que o número máximo permitido, use uma cadeia de caracteres JSON para o valor da marca. A cadeia de caracteres JSON pode conter diversos valores que você aplica a um só nome de marca. Um grupo de recursos ou assinatura pode conter muitos recursos que possuem 50 pares de nome/valor de marca.
+
+O nome da marca tem um limite de 512 caracteres e o valor da marca tem um limite de 256 caracteres. Para contas de armazenamento, o nome da marca tem um limite de 128 caracteres e o valor da marca tem um limite de 256 caracteres.
+
+Recursos clássicos como Serviços de Nuvem não dão suporte a marcas.
+
+Os Grupos de IP do Azure e as Políticas de Firewall do Azure não dão suporte a operações de PATCH. Operações de método de API PATCH, portanto, não podem atualizar marcas por meio do portal. Em vez disso, você pode usar os comandos de atualização para esses recursos. Você pode atualizar um grupo IP usando, por exemplo, o comando az network ip-group update.
+
+Os nomes das marcas não podem conter esses caracteres: <, >, %, &, \, ?, / 
+
+
+Observação
+
+As zonas DNS (sistema de nomes de domínio) do Azure não dão suporte ao uso de espaços ou parênteses na marca ou a uma marca que comece com um número. Nomes de marcação de DNS do Azure não são compatíveis com caracteres unicode e especiais. O valor pode conter todos os caracteres.
+
+O Gerenciador de Tráfego não dá suporte ao uso de espaços, # ou : no nome da marca. O nome da marca não pode começar com um número.
+
+O Azure Front Door não dá suporte ao uso de # ou : no nome da marca.
+
+Os recursos do Azure abaixo dão suporte apenas a 15 marcas:
+
+Automação do Azure
+CDN (Rede de Distribuição de Conteúdo do Azure)
+DNS do Azure (Zona e registros A)
+Pesquisa Salva pela Análise de Logs do Azure 
+
+As tags são marcações que podem ser aplicadas nos recursos do Azure e assinaturas para organizá-los logicamente por categorias. Cada tag consiste em um nome e um valor, por exemplo Centro de Custo/TI, ou Ambiente/Produção. Depois de criar suas tags você pode associá-las aos recursos apropriados. 
+
+
+Um dos melhores usos das tags é agrupar dados de cobrança. No momento da visualização dos custos no portal do Azure, no menu de Gestão de Custos (Cost Management), o portal mostra o custo por recursos, localização, subscrição entre outras opções que podemos filtrar. Se realizarmos o filtro por recursos, conforme a imagem abaixo, teremos as informações do custo de nossas máquinas virtuais, storage account, entre outros recursos ou serviços, porém não saberemos em que centro de custo esses recursos/serviços estão alocados. 
+
+Com as tags podemos verificar além do custo de cada recurso, onde estes estão alocados, qual setor/departamento está com um alto custo de recursos financeiros. Na imagem abaixo mostro o custo por tipo de serviço e as tags associadas ou não. No campo Service Name o gráfico informa os custos por tipo de serviço, no campo tag com o valor departamento o gráfico informa que foi gasto menos de um centavo em recursos do departamento TI e R$4,11 para serviços ou recursos não marcados.
+
+Uma outra forma que é possível visualizar os custos através de tags, é baixando o arquivo CSV de uso para serviços. As marcas aparecem nas colunas TagKey e TagValue, com isso você pode agrupar os recursos por centro de custo e ambiente de produção.
+
+Considerações importantes:
+
+Cada recurso ou grupo de recursos pode ter no máximo 50 pares de nome/valor de tag;
+
+
+As tags aplicadas ao grupo de recursos não são herdadas pelos recursos existentes nesse grupo.
+
+
+Como criar as Tags?
+
+As tags podem ser criadas pelo portal no momento do deploy de um recurso, ou após um recurso já criado e através do PowerShell.
+
+
+
+Criando tags no portal
+
+Acessando o portal do Azure é possível criar uma tag no momento do deploy de um recurso, ou com o recurso já criado clicando na opção de tag. Segue link de vídeo demonstrativo. 
+
+
+
+**Criando Tags no PowerShell**
+
+O Azure PowerShell oferece dois comandos para aplicar tags: New-AzTag e Update-AzTag. 
+
+
+Você pode instalar utilizar o PowerShell através da sua máquina local, instalando o módulo Az.Resources 1.12.0 ou posterior. É possível verificar sua versão atual com Get-InstalledModule -Name Az.Resources. Pode ser instalado aquele módulo ou instalar o  instalar o Azure PowerShell  3.6.1 ou posterior. Além disso é possível através do cloud shell direto no portal do Azure.  
+
+
+O New-AzTag substitui todas as marcas no recurso, no grupo de recursos ou na assinatura. Na chamada do comando, passe a ID de recurso da entidade que deseja marcar. O exemplo a seguir aplica um conjunto de marcas a uma virtual machine. 
+
+
+
 
 
 
