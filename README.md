@@ -2321,10 +2321,296 @@ Filtrar por data e serviço de nuvem – Ao exibir os documentos disponíveis, v
 
 O Portal de Confiança do Serviço tem documentos que, dada a natureza de seu conteúdo, estão disponíveis para usuários com permissões específicas. Você precisa receber uma das seguintes funções para exibir documentos restritos:
 
-Administração de locatário
+**Administração de locatário
 Administrador de Conformidade
 Administrador de Segurança
-Leitor de Segurança
+Leitor de Segurança** 
+
+
+**Azure Arc** 
+
+![Screenshot_20240923-195114](https://github.com/user-attachments/assets/00ea5027-75c3-46c6-9baf-95f44c54be89)
+
+Hoje em dia, as empresas lutam para controlar e governar ambientes cada vez mais complexos que se estendem por data centers, várias nuvens e edge. Cada ambiente e nuvem possui seu próprio conjunto de ferramentas de gerenciamento, e novos modelos operacionais DevOps e ITOps podem ser difíceis de implementar em todos os recursos.
+
+O Azure Arc simplifica a governança e o gerenciamento ao fornecer uma plataforma de gerenciamento multinuvem e local consistente.
+
+**O Azure Arc fornece uma maneira centralizada e unificada de:**
+
+Gerencie todo o seu ambiente em conjunto projetando seus recursos existentes não pertencentes ao Azure e/ou locais no Azure Resource Manager.
+Gerencie máquinas virtuais, clusters Kubernetes e bancos de dados como se estivessem em execução no Azure.
+Use serviços e recursos de gerenciamento familiares do Azure, independentemente de onde seus recursos estejam.
+Continue usando ITOps tradicionais enquanto introduz práticas de DevOps para dar suporte a novos padrões nativos de nuvem em seu ambiente.
+Configure locais personalizados como uma camada de abstração sobre clusters Kubernetes e extensões de cluster habilitados para Azure Arc. 
+
+Atualmente, o Azure Arc permite que você gerencie os seguintes tipos de recursos hospedados fora do Azure:
+
+Servidores : gerencie servidores físicos Windows e Linux e máquinas virtuais hospedadas fora do Azure.
+Clusters Kubernetes : anexe e configure clusters Kubernetes em execução em qualquer lugar, com diversas distribuições suportadas.
+Serviços de dados do Azure : execute serviços de dados do Azure no local, na borda e em nuvens públicas usando o Kubernetes e a infraestrutura de sua escolha. Os serviços SQL Managed Instance e PostgreSQL (prévia) estão disponíveis no momento.
+SQL Server : estenda os serviços do Azure para instâncias do SQL Server hospedadas fora do Azure.
+Máquinas virtuais: provisione, redimensione, exclua e gerencie máquinas virtuais com base no VMware vSphere ou Azure Stack HCI e habilite o autoatendimento de VM por meio de acesso baseado em função. 
+Principais características e benefícios
+Alguns dos principais cenários suportados pelo Azure Arc são:
+
+Implemente inventário, gerenciamento, governança e segurança consistentes para servidores em todo o seu ambiente.
+
+Configure extensões de VM do Azure para usar os serviços de gerenciamento do Azure para monitorar, proteger e atualizar seus servidores.
+
+Gerencie e governe clusters do Kubernetes em escala.
+
+Use o GitOps para implantar configurações em um ou mais clusters de repositórios Git.
+
+Conformidade e configuração zero-touch para clusters Kubernetes usando o Azure Policy.
+
+Execute serviços de dados do Azure em qualquer ambiente Kubernetes como se ele fosse executado no Azure (especificamente Azure SQL Managed Instance e Azure Database para servidor PostgreSQL, com benefícios como upgrades, atualizações, segurança e monitoramento). Use a escala elástica e aplique atualizações sem qualquer tempo de inatividade do aplicativo, mesmo sem conexão contínua ao Azure.
+
+Crie locais personalizados em cima dos seus clusters Kubernetes habilitados para Azure Arc , usando-os como locais de destino para implantar instâncias de serviços do Azure. Implante suas extensões de cluster de serviço do Azure para serviços de dados habilitados para Azure Arc , serviços de aplicativo no Azure Arc (incluindo aplicativos da Web, de função e lógicos) e Event Grid no Kubernetes .
+
+Execute operações de gerenciamento e ciclo de vida de máquinas virtuais para ambientes VMware vSphere e Azure Stack HCI .
+
+Uma experiência unificada visualizando seus recursos habilitados para o Azure Arc, esteja você usando o portal do Azure, a CLI do Azure, o Azure PowerShell ou a API REST do Azure. 
+
+
+**AZURE Resource Manager**
+
+O Azure Resource Manager é p serviço de implantação e gerenciamento do Azure. Ele fornece uma camada de gerenciamento que lhe permite criar, atualizar e excluir recursos em sua conta do Azure. Use recursos de gerenciamento, como controle de acesso, bloqueios e marcas, para proteger e organizar seus recursos após a implantação.
+
+Para saber mais sobre modelos do ARM (Azure Resource Manager), confira a Visão geral dos modelos do ARM. Para saber mais sobre o Bicep, confira Visão geral do Bicep.
+
+Camada de gerenciamento consistente
+Quando você envia uma solicitação por meio de qualquer uma das APIs, das ferramentas ou dos SDKs do Azure, o Resource Manager recebe a solicitação. Ele autentica e autoriza a solicitação antes de encaminhá-la para o serviço apropriado do Azure. Como todas as solicitações são manipuladas por meio da mesma API, você verá funcionalidades e resultados uniformes em todas as diferentes ferramentas.
+
+Todos as funcionalidades disponíveis no portal também estão disponíveis por meio do PowerShell, da CLI do Azure, das APIs REST e dos SDKs de cliente. A funcionalidade inicialmente lançada por meio de APIs é representada no portal em até 180 dias depois da versão inicial.
+
+Terminologia
+Se você for um novo usuário do Azure Resource Manager, há alguns termos com os quais talvez você não esteja familiarizado.
+
+recurso -um item gerenciável que está disponível por meio do Azure. Máquinas virtuais, contas de armazenamento, aplicativos Web, bancos de dados e redes virtuais são exemplos de recursos. Grupos de recursos, assinaturas, grupos de gerenciamento e marcas também são exemplos de recursos.
+grupo de recursos - Um contêiner que mantém os recursos relacionados a uma solução do Azure. O grupo de recursos inclui esses recursos que você deseja gerenciar como um grupo. Você decide quais recursos pertencem a um grupo de recursos com base no que faz mais sentido para sua organização. Consulte O que é um grupo de recursos?.
+provedor de recursos – um serviço que fornece recursos do Azure. Por exemplo, um provedor de recursos comum é Microsoft.Compute, que fornece o recurso de máquina virtual. Microsoft.Storage é outro provedor de recursos comum. Confira Provedores e tipos de recurso.
+Sintaxe declarativa – Sintaxe que permite declarar "Isso é o que pretendo criar" sem precisar escrever a sequência de comandos de programação para fazer isso. Os modelos do ARM e os arquivos Bicep são exemplos de sintaxe declarativa. Nesses arquivos, você define as propriedades da infraestrutura a ser implantada no Azure.
+Modelo do ARM – Um arquivo JSON (JavaScript Object Notation) que define um ou mais recursos para implantação em grupo de recursos, assinatura, grupo de gerenciamento ou locatário. O modelo pode ser usado para implantar os recursos de forma consiste e repetida. Confira Visão geral da implantação de modelo.
+Arquivo Bicep - Um arquivo para implantar declarativamente os recursos do Azure. O Bicep é uma linguagem que foi criada para fornecer a melhor experiência de criação para soluções de infraestrutura como código no Azure. Confira Visão geral do Bicep.
+recurso de extensão – um recurso que é adicionado às funcionalidades de outro recurso. Por exemplo, a atribuição de função é um tipo de recurso de extensão. Você aplica uma atribuição de função a qualquer outro recurso para especificar o acesso. Confira Recursos de extensão. 
+
+Os benefícios de usar o Gerenciador de Recursos
+Com o Resource Manager, você pode:
+
+Gerenciar sua infraestrutura por meio de modelos declarativos em vez de scripts.
+
+Implantar, gerenciar e monitorar todos os recursos da sua solução como um grupo em vez de tratá-los individualmente.
+
+Implantar novamente a solução em todo seu ciclo de vida de desenvolvimento e com a confiança de que seus recursos serão implantados em um estado consistente.
+
+Definir as dependências entre os recursos para que eles sejam implantados na ordem correta.
+
+Aplicar o controle de acesso a todos os serviços, pois o RBAC do Azure (controle de acesso baseado em função do Azure) é integrado nativamente à plataforma de gerenciamento.
+
+Aplicar marcas aos recursos para organizar de modo lógico todos os recursos em sua assinatura.
+
+Esclarecer a cobrança da sua organização exibindo os custos para um grupo de recursos que compartilha a mesma tag. 
+
+**Compreender o escopo**
+
+O Azure fornece quatro níveis de escopo de gerenciamento: grupos de gerenciamento, assinatura, grupos de recursos e recursos. A imagem a seguir mostra um exemplo dessas camadas.
+
+
+gerenciar um grupo de recursos, você pode atribuir Políticas do Azure, funções do Azure ou bloqueios de recursos.
+
+Você pode aplicar marcas a um grupo de recursos. Os recursos do grupo de recursos não herdam essas marcas.
+
+Um recurso pode interagir com os recursos de outros grupos de recursos. Esse cenário é comum quando os dois recursos estão relacionados, mas não compartilham o ciclo de vida. Por exemplo, você pode ter um aplicativo Web que se conecta a um banco de dados em outro grupo de recursos.
+
+Quando você exclui um grupo de recursos, todos os recursos do grupo de recursos também são excluídos. Para obter informações sobre como o Azure Resource Manager orquestra essas exclusões, confira Exclusão de grupo de recursos e recursos do Azure Resource Manager.
+
+Você pode implantar até 800 instâncias de um tipo de recurso em cada grupo de recursos. Alguns tipos de recursos são isentos do limite de 800 instâncias. Para obter mais informações, confira limites do grupo de recursos.
+
+Alguns recursos podem existir fora de um grupo de recursos. Esses recursos são implantados na assinatura, no grupo de gerenciamento ou no locatário. Somente tipos de recursos específicos têm suporte nesses escopos.
+
+Para criar um grupo de recursos, use o portal, o PowerShell, a CLI do Azure ou um modelo do ARM.
+
+Qual local devo usar para o meu grupo de recursos?
+Quando criar um grupo de recursos, você precisará fornecer um local para ele.
+
+Você pode estar se perguntando: "Por que um grupo de recursos precisa de um local? E, se os recursos podem ter locais diferentes do grupo de recursos, por que o local do grupo de recursos importa?"
+
+O grupo de recursos armazena metadados sobre os recursos. Quando você especifica uma localização para o grupo de recursos, você especifica onde os metadados são armazenados. Por motivos de conformidade, talvez você precise garantir que os dados sejam armazenados em determinada região.
+
+Para garantir a consistência do estado para o grupo de recursos, todas as operações do plano de controle são roteadas através da localização do grupo de recursos. Ao selecionar um local de grupo de recursos, recomendamos que você selecione um local próximo ao local de origem das suas operações de controle. Normalmente, este local é o mais próximo da sua localização atual. Este requisito de roteamento se aplica apenas às operações de plano de controle do grupo de recursos. Isso não afeta as solicitações enviadas para seus aplicativos.
+
+Se a região de um grupo de recursos estiver temporariamente indisponível, talvez você não consiga atualizar recursos no grupo de recursos porque os metadados não estão disponíveis. Os recursos em outras regiões ainda funcionam conforme o esperado, mas talvez você não consiga atualizá-los. Essa condição também pode se aplicar a recursos globais, como DNS do Azure, Zonas Privadas do DNS do Azure, Gerenciador de Tráfego do Azure e Azure Front Door. Você pode exibir quais tipos têm seus metadados gerenciados pelo Azure Resource Manager por meio da lista de tipos para a tabela de recursos do Azure Resource Graph.
+
+Para reduzir o impacto das interrupções regionais, recomendamos que você coloque os recursos na mesma região que o grupo de recursos. Quando a região do grupo de recursos está indisponível, o Azure Resource Manager não consegue atualizar os metadados do recurso e bloqueia suas chamadas de gravação. Ao colocar o recurso e a região do grupo de recursos, você reduz o risco de indisponibilidade de região porque seus recursos e metadados existem em apenas uma região em vez de várias.
+
+Saiba mais sobre a criação de aplicativos confiáveis em Desenvolver aplicativos do Azure confiáveis. 
+
+Resiliência do Azure Resource Manager
+O serviço do Azure Resource Manager foi projetado para resiliência e disponibilidade contínua. As operações do Resource Manager e do painel de controle (solicitações enviadas para management.azure.com) na API REST são:
+
+Distribuídas entre regiões. O Azure Resource Manager tem uma instância separada em cada região do Azure, o que significa que uma falha da instância do Azure Resource Manager em uma região não afetará a disponibilidade do Azure Resource Manager ou de outros serviços do Azure em outra região. Embora o Azure Resource Manager seja distribuído entre regiões, alguns serviços são regionais. Essa distinção significa que, embora a manipulação inicial da operação do plano de controle seja resiliente, a solicitação pode ser suscetível a interrupções regionais quando encaminhada para o serviço.
+
+Distribuídas entre zonas de disponibilidade (e regiões) em locais com várias zonas de disponibilidade. Essa distribuição garante que, quando uma região perde uma ou mais zonas, o Azure Resource Manager pode realizar o failover em outra zona ou outra região para continuar a fornecer a capacidade do painel de controle nos recursos.
+
+Não dependem de um datacenter lógico único.
+
+Nunca são desativadas para atividades de manutenção.
+
+Essa resiliência se aplica aos serviços que recebem solicitações por meio do Resource Manager. Por exemplo, o Key Vault se beneficia dessa resiliência. 
+
+**O que são Ambientes de Implantação Azure?**
+
+Os Ambientes de Implantação Azure capacitam as equipes de desenvolvimento a desenvolver de forma rápida e fácil a infraestrutura de aplicativos com modelos baseados em projeto, que estabelecem consistência e melhores práticas, maximizando a segurança, a conformidade e a eficiência de custos. Esse acesso sob demanda a ambientes seguros acelera os diferentes estágios do ciclo de vida do desenvolvimento de software com conformidade e economia.
+
+Um ambiente de implantação é uma coleção de recursos de infraestrutura do Azure definidos em um modelo chamado de definição de ambiente. Os desenvolvedores podem implementar a infraestrutura definida nos modelos nas assinaturas às quais têm acesso e criar seus aplicativos na infraestrutura. Por exemplo, você pode definir um ambiente de implantação que inclui um aplicativo Web, um banco de dados e uma conta de armazenamento. Seu desenvolvedor Web pode começar a codificar o aplicativo Web sem se preocupar com a infraestrutura subjacente.
+
+Os engenheiros de plataforma podem criar e gerenciar definições de ambiente. Para especificar quais definições de ambiente estão disponíveis aos desenvolvedores, os engenheiros de plataforma podem associar definições de ambiente aos projetos e atribuírem permissões aos desenvolvedores.
+
+Os Ambientes de Implantação do Azure ajudam os engenheiros de plataforma a aplicarem o conjunto certo de políticas e configurações em vários tipos de ambientes, controlarem a configuração de recursos que os desenvolvedores podem criar e acompanharem ambientes entre os projetos. Eles podem aplicar a governança do Azure com base no tipo de ambiente, como área restrita, teste, preparo ou produção.
+
+O diagrama a seguir mostra uma visão geral dos recursos de Ambientes de Implantação do Azure. Os engenheiros de plataforma definem modelos de infraestrutura e configuram assinaturas, identidade e permissões. Os desenvolvedores criam ambientes com base nos modelos e criam e implantam aplicativos na infraestrutura. Os ambientes podem dar suporte a diferentes cenários, como ambientes sob demanda, ambientes de área restrita para teste e pipelines de CI/CD para integração contínua e implantação contínua. 
+
+Cenários de uso
+**Os cenários comuns nos Ambientes de Implantação do Azure incluem:**
+
+Ambientes como parte de um pipeline de CI/CD
+Criar e gerenciar ambientes de teste em toda a empresa pode exigir um esforço significativo. Com os Ambientes de Implantação do Azure, os desenvolvedores podem incorporar diferentes tipos de ambientes de ciclo de vida do produto (como desenvolvimento, teste, preparo, pré-produção e produção) em um pipeline de integração contínua e entrega contínua (CI/CD).
+
+Neste cenário:
+
+As equipes de desenvolvimento podem conectar seus ambientes a pipelines de CI/CD para habilitar cenários de DevOps.
+As equipes de TI de desenvolvimento central podem controlar centralmente os custos, controlar alertas de segurança e gerenciar ambientes entre projetos e centros de desenvolvimento.
+Ambientes de área restrita para investigações
+Os desenvolvedores costumam investigar diferentes tecnologias ou designs de infraestrutura. Por padrão, todos os ambientes criados com os Ambientes de Implantação Azure estão no próprio grupo de recursos. Os membros do projeto obtêm acesso de colaborador a esses recursos por padrão.
+
+Neste cenário:
+
+Os desenvolvedores podem adicionar e alterar recursos do Azure conforme for necessário para seus ambientes de desenvolvimento ou de teste.
+As equipes de TI de desenvolvimento central podem acompanhar com facilidade os custos de todos os ambientes usados para fins de investigação. 
+
+O Microsoft Dev Box e os Ambientes de Implantação do Azure são serviços complementares que compartilham determinados componentes arquitetônicos. O Computador de Desenvolvimento fornece aos desenvolvedores uma estação de trabalho de desenvolvimento baseada em nuvem, chamada de computador de desenvolvimento, que é configurada com as ferramentas necessárias para o seu trabalho. Centros de desenvolvimento e projetos são comuns a ambos os serviços e ajudam a organizar recursos em uma empresa.
+
+Ao configurar Ambientes de Implantação, você poderá ver os recursos e componentes do Computador de Desenvolvimento. Você pode até mesmo ver mensagens informativas sobre os recursos do Computador de Desenvolvimento. Se você não estiver configurando nenhum recurso do Computador de Desenvolvimento, poderá ignorar essas mensagens com segurança. 
+
+Usar a CLI do Azure e o Azure PowerShell com a Área de Trabalho Virtual do Azure 
+
+
+Há uma extensão da CLI do Azure e um módulo do Azure PowerShell para a Área de Trabalho Virtual do Azure que você poderá usar para criar, atualizar, excluir e interagir com os objetos de serviço da Área de Trabalho Virtual do Azure como alternativas ao uso do portal do Azure. Eles fazem parte da CLI do Azure e do Azure PowerShell, que abrangem uma ampla gama de serviços do Azure. 
+
+Extensão da CLI do Azure e módulo do Azure PowerShell
+A seguir, são apresentados os nomes da extensão da CLI do Azure e do módulo do Azure PowerShell e os links para nossa documentação de referência:
+
+CLI do Azure: az desktopvirtualization
+
+Azure PowerShell: Az.DesktopVirtualization
+
+Tanto a CLI do Azure quanto o Azure PowerShell estão disponíveis para uso no Azure Cloud Shell nativamente no portal do Azure sem nenhuma instalação ou você poderá instalá-los localmente no dispositivo para Windows, macOS e Linux.
+
+Para saber como instalar a CLI do Azure e o Azure PowerShell em todas as plataformas com suporte, consulte os seguintes links:
+
+Azure CLI: Como instalar a CLI do Azure
+
+Azure PowerShell: Instalar o módulo Azure Az PowerShell 
+
+
+**O que é a CLI do Azure?**
+
+A CLI (Interface de Linha de Comando) do Azure é uma ferramenta de linha de comando multiplataforma usada para se conectar ao Azure, além de executar comandos administrativos em recursos do Azure. Ela permite a execução de comandos por meio de um terminal usando prompts de linha de comando interativos ou um script.
+
+Para uso interativo, primeiro, inicie um shell como cmd.exe no Windows, ou um Bash no Linux ou no macOS e, em seguida, emita um comando no prompt do shell. Para automatizar tarefas repetitivas, reúna os comandos da CLI em um script do shell usando a sintaxe de script do shell escolhido e execute o script.
+
+Você pode instalar a CLI do Azure localmente em computadores Linux, macOS ou Windows. Ele também pode ser usado em um navegador por meio do Azure Cloud Shell ou executado de dentro de um contêiner do Docker. 
+
+Instalar ou executar no Azure Cloud Shell
+A maneira mais fácil de aprender a usar a CLI do Azure é executando um ambiente Bash no Azure Cloud Shell por meio de seu navegador. Para saber mais sobre o Cloud Shell, consulte Início Rápido para Bash no Azure Cloud Shell.
+
+Quando estiver pronto para instalar a CLI do Azure, consulte as instruções de instalação para o contêiner do Windows, Linux, macOS e Docker. Se você estiver usando o modelo de implantação clássico do Azure, instale a CLI clássica do Azure. 
+
+CLI do azure
+
+Abrir o Cloud Shell
+az vm --help
+Aqui está um exemplo de saída com linhas omitidas por brevidade:
+
+Saída
+
+Copiar
+Subgroups:
+  application            : Manage applications for VM.
+  availability-set       : Group resources into availability sets.
+  boot-diagnostics       : Troubleshoot the startup of an Azure Virtual Machine.
+  ...
+Aqui está outro exemplo que localiza os comandos da CLI do Azure para agrupar máquinas virtuais em conjuntos de disponibilidade, um subgrupo de az vm:
+
+CLI do Azure
+
+Copiar
+
+Abrir o Cloud Shell
+az vm availability-set --help
+Use também --help para obter listas de parâmetros e exemplos de comandos para um comando de referência.
+
+CLI do Azure
+
+Copiar
+
+Abrir o Cloud Shell
+az vm create --help
+Aqui está um exemplo de saída com linhas omitidas por brevidade:
+
+Saída
+
+Copiar
+Arguments
+    --name  [Required] : Name of the virtual machine.
+    ...
+Authentication Arguments
+    --admin-password   : Password for the VM if authentication type is 'Password'.
+    --admin-username   : Username for the VM...
+    ...
+Managed Service Identity Arguments
+    ...
+Examples
+    Create a VM from a custom managed image.
+      az vm create -g MyResourceGroup -n MyVm --image MyImage
+    ...
+Use o índice de referência de A a Z que lista todos os grupos de comandos em ordem alfabética.
+
+**Azure PowerShell**
+
+O Azure PowerShell foi projetado para gerenciar e administrar recursos do Azure na linha de comando. Use o Azure PowerShell quando quiser compilar ferramentas automatizadas que usam o modelo do Azure Resource Manager. Teste-o em seu navegador com o Azure Cloud Shell ou instale-o em seu computador local. 
+
+
+**Instalar ou executar no Azure Cloud Shell**
+
+A maneira mais fácil para começar a usar o Azure PowerShell é testando-o em um ambiente do Azure Cloud Shell. Para começar a usar o Cloud Shell, confira Início Rápido do PowerShell no Azure Cloud Shell. O Cloud Shell executa o PowerShell em um contêiner do Linux. Portanto, a funcionalidade específica do Windows não está disponível.
+
+Quando você estiver pronto para instalar o Azure PowerShell em seu computador local, siga as instruções em Instalar o módulo do Azure PowerShell. 
+
+
+**Entrar no Azure**
+
+Entre interativamente com o cmdlet Connect-AzAccount. Caso você use o Cloud Shell, pule esta etapa. Sua sessão do Azure Cloud Shell já está autenticada para o ambiente, a assinatura e o locatário que iniciaram a sessão do Cloud Shell. 
+
+
+Connect-AzAccount
+
+Os serviços de nuvem do Azure oferecem ambientes que estão em conformidade com as leis de manipulação de dados regionais. Para contas em uma nuvem regional, use o parâmetro Environment para entrar. Obtenha o nome do ambiente de sua região usando o cmdlet Get-AzEnvironment. Por exemplo, para entrar no Azure China 21Vianet: 
+
+Começando com o módulo do Az PowerShell versão 5.0.0, o Connect-AzAccount apresenta um prompt de logon interativo baseado em navegador por padrão. Você pode especificar o parâmetro UseDeviceAuthentication para receber uma cadeia de caracteres de token que anteriormente era o padrão para o PowerShell versão 6 e superior.
+
+Depois de entrar, você verá informações indicando qual das suas assinaturas do Azure está ativa. Caso você tenha várias assinaturas do Azure em sua conta e queira selecionar uma diferente, obtenha suas assinaturas disponíveis com o Get-AzSubscription e use o cmdlet Set-AzContext com sua ID da assinatura. Para obter mais informações sobre como gerenciar suas assinaturas do Azure no Azure PowerShell, confira Usar várias assinaturas do Azure.
+
+Depois de entrar, use os cmdlets do Azure PowerShell para acessar e gerenciar os recursos em sua assinatura. Para saber mais sobre o processo de entrada e os métodos de autenticação, confira Entrar com o Azure PowerShell.
+
+**Localizar comandos**
+
+Os cmdlets do Azure PowerShell seguem uma convenção de nomenclatura padrão para o PowerShell, Verb-Noun. O verbo descreve a ação (por exemplo, New, Get, Set, Remove) e o substantivo descreve o tipo de recurso (por exemplo, AzVM, AzKeyVaultCertificate, AzFirewall, AzVirtualNetworkGateway). Os substantivos no Azure PowerShell sempre começam com o prefixo Az. Para obter a lista completa de verbos padrão, confira Verbos aprovados para comandos do PowerShell.
+
+Conhecer os substantivos, os verbos e os módulos disponíveis do Azure PowerShell ajuda a localizar comandos com o cmdlet Get-Command. Por exemplo, para localizar todos os comandos relacionados à VM que usam o verbo Get:
+
+Get-Command -Verb Get -Noun AzVM* -Module Az.Compute 
+
 
 
 
