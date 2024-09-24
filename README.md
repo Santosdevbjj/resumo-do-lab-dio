@@ -2607,9 +2607,107 @@ Depois de entrar, use os cmdlets do Azure PowerShell para acessar e gerenciar os
 
 Os cmdlets do Azure PowerShell seguem uma convenção de nomenclatura padrão para o PowerShell, Verb-Noun. O verbo descreve a ação (por exemplo, New, Get, Set, Remove) e o substantivo descreve o tipo de recurso (por exemplo, AzVM, AzKeyVaultCertificate, AzFirewall, AzVirtualNetworkGateway). Os substantivos no Azure PowerShell sempre começam com o prefixo Az. Para obter a lista completa de verbos padrão, confira Verbos aprovados para comandos do PowerShell.
 
-Conhecer os substantivos, os verbos e os módulos disponíveis do Azure PowerShell ajuda a localizar comandos com o cmdlet Get-Command. Por exemplo, para localizar todos os comandos relacionados à VM que usam o verbo Get:
+Conhecer os substantivos, os verbos e os módulos disponíveis do Azure PowerShell ajuda a localizar comandos com o cmdlet Get-Command. Por exemplo, para localizar todos os comandos relacionados à VM que usam o **verbo Get:**
 
 Get-Command -Verb Get -Noun AzVM* -Module Az.Compute 
+
+**Assistente do Azure**
+
+![Screenshot_20240923-225039](https://github.com/user-attachments/assets/bcace70b-ae3b-488c-9a66-b52d08ca544b)
+
+
+O Assistente do Azure oferece recomendações acionáveis para ajudar você a otimizar seus recursos do Azure quanto à confiabilidade, segurança, excelência operacional, desempenho e custo.
+
+Otimize suas implantações com recomendações personalizadas do Azure
+O consultor fornece práticas recomendadas relevantes para ajudá-lo a melhorar a confiabilidade, segurança, e desempenho, alcançar excelência operacional, e reduzir custos. Configure o consultor para segmentar assinaturas específicas e grupos de recursos, para se concentrar em otimizações críticas. Acesse o Assistente por meio do portal do Azure, do Interface de Linha de Comando (CLI) do Azure, ou a API do Assistente. Ou configure alertas para ser notificado automaticamente sobre novas recomendações. 
+
+Execute uma ação de forma fácil e rápida
+O Assistente foi desenvolvido para ajudar a economizar seu tempo na otimização da nuvem. O serviço de recomendação inclui ações sugeridas que podem ser  realizadas imediatamente,  adiadas ou ignoradas. ACorreção Rápida do Assistente torna a otimização em escala mais rápida e fácil, permitindo que os usuários corrijam as recomendações de vários recursos simultaneamente e com apenas alguns cliques. As recomendações são priorizadas de acordo com a nossa melhor estimativa de significância para o seu ambiente, e é possível compartilhá-las com sua equipe ou stakeholders. 
+
+Encontre todas as recomendações de otimização em um só lugar
+O Azure oferece muitos serviços que fornecem recomendações, incluindo a Central de Segurança do Azure, o Gerenciamento de Custos do Azure, o Assistente do Banco de Dados SQL do Azure, o Serviço de Aplicativo do Azure, entre outros. O Assistente extrai as recomendações de todos esses serviços para que seja possível examiná-las de forma mais fácil e agir em um único local. 
+
+**Integridade do Serviço do Azure**
+
+A Integridade do Serviço do Azure notifica você sobre incidentes de serviço e manutenção planejada do Azure para que você execute ações a fim de atenuar o tempo de inatividade. Configure alertas de nuvem personalizáveis e use seu painel personalizado para analisar problemas de integridade, monitorar o impacto em seus recursos de nuvem, obter diretrizes e suporte, além de compartilhar detalhes e atualizações. 
+
+Obtenha alertas sobre incidentes ativos e manutenções futuras
+Configure alertas personalizáveis para ser notificado sobre incidentes de serviço, manutenção planejada e avisos de integridade. Receba alertas por canais de sua preferência, incluindo email, SMS, notificação por push, webhook e ferramentas de gerenciamento de serviços de TI populares como o ServiceNow. Garanta que suas equipes estejam informadas para que possam responder rapidamente. 
+
+Baixe relatórios oficiais e RCAs (análises de causa raiz)
+Acompanhe eventos em tempo real em dispositivos móveis ou em seu sistema de gerenciamento de problemas com links persistentes e baixe relatórios oficiais da Microsoft. Em seguida, exiba seu histórico de incidentes e obtenha RCAs para compartilhar com seus stakeholders. 
+
+
+**Azure Monitor**
+
+O Azure Monitor é uma solução de monitoramento abrangente para coletar, analisar e responder a dados de monitoramento de seus ambientes de nuvem e locais. Você pode usar o Azure Monitor para maximizar a disponibilidade e o desempenho de seus aplicativos e serviços. Ele ajuda você a entender como seus aplicativos estão se saindo e permite que você responda manual e programaticamente a eventos do sistema.
+
+O Azure Monitor coleta e agrega os dados de cada camada e componente do seu sistema em várias assinaturas e locatários do Azure e não Azure. Ele os armazena em uma plataforma de dados comum para consumo por um conjunto comum de ferramentas que podem correlacionar, analisar, visualizar e/ou responder aos dados. Você também pode integrar outras ferramentas da Microsoft e não Microsoft. 
+
+Arquitetura de alto nível
+O Azure Monitor pode monitorar estes tipos de recursos no Azure, em outras nuvens ou no local:
+
+Aplicações
+**Máquinas virtuais**
+Sistemas operacionais convidados
+Contêineres incluindo métricas do Prometheus
+Bases de dados
+Eventos de segurança em combinação com o Azure Sentinel
+Eventos de networking e saúde em combinação com o Network Watcher
+Fontes personalizadas que usam as APIs para obter dados no Azure Monitor
+Você também pode exportar dados de monitoramento do Azure Monitor para outros sistemas para que você possa:
+
+Integre-se com outras ferramentas de monitoramento e visualização de terceiros e de código aberto
+Integrar com emissão de bilhetes e outros sistemas ITSM
+Se você for um usuário do System Center Operations Manager (SCOM), o Azure Monitor agora inclui o Azure Monitor SCOM Managed Instance (SCOM MI) . O Operations Manager MI é uma versão hospedada na nuvem do Operations Manager e permite que você mova sua instalação local do Operations Manager para o Azure. 
+
+**Coleta e roteamento de dados**
+
+O Azure Monitor coleta e roteia dados de monitoramento usando alguns mecanismos diferentes, dependendo dos dados que estão sendo roteados e do destino. Assim como um sistema rodoviário melhorado ao longo dos anos, nem todas as estradas levam a todos os locais. Algumas são legadas, algumas novas e algumas são melhores do que outras, dada a evolução do Azure Monitor ao longo do tempo. 
+
+O Azure oferece diversas ferramentas para monitoramento inteligente, incluindo: 
+ 
+**Azure Monitor**
+Monitora o desempenho e a integridade de máquinas virtuais e conjuntos de dimensionamento, além de incluir processos em execução e dependências de outros recursos. 
+ 
+**Intelligent Insights**
+Monitoramento proativo do desempenho do banco de dados, com detecção de degradação, análise de causas raiz e recomendações de melhoria. 
+ 
+**Azure IoT Central**
+Monitoramento de medidores inteligentes que registram e comunicam dados de consumo de energia às concessionárias de serviços públicos. 
+ 
+**O monitoramento do Azure pode ajudar a:** 
+ 
+Economizar tempo e dinheiro, pois permite saber se os recursos estão sendo utilizados e se estão funcionando 
+ 
+**Otimizar o uso dos recursos**
+ 
+Definir alertas para saber se o uso ou faturamento excedeu os parâmetros pré-definidos 
+ 
+Integrar todos os ambientes numa solução de monitorização central 
+
+**Medidores inteligentes** e conectividade
+O medidor inteligente registra e comunica os dados de consumo de energia às concessionárias de serviços públicos para monitoramento e outros casos de uso, como cobrança e resposta de demanda.
+
+Normalmente, um medidor usa um gateway ou uma ponte para se conectar a um aplicativo Azure IoT Central. Para saber mais sobre pontes, confira Usar a ponte de dispositivo do Azure IoT Central para conectar outras nuvens IoT ao Azure IoT Central. 
+
+Os medidores inteligentes não apenas permitem a cobrança automatizada, mas também casos de uso de medição avançada, como leituras em tempo real e comunicação bidirecional.
+
+Um modelo de aplicativo permite que as concessionárias de serviços públicos e parceiros monitorem o status e a telemetria dos medidores inteligentes e configurem alarmes e notificações. O modelo fornece comandos de exemplo, como desconectar um medidor e atualizar software. Você pode exportar os dados do medidor para outros aplicativos de negócios e usar os dados para desenvolver soluções personalizadas.
+
+As principais funcionalidades do aplicativo incluem:
+
+**Modelo de dispositivo de exemplo para medidores**
+Informações de medidor e status ao vivo
+Leituras de medidores, como energia, potência e voltagem
+Exemplos de comando do medidor
+Visualização e painéis internos
+Extensibilidade para desenvolvimento de solução personalizada
+
+
+
+
+
 
 
 
